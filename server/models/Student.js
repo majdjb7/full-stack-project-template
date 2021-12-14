@@ -6,7 +6,7 @@ const studentSchema = new Schema({
     email: String,
     password: String,
     phone: String,
-    Cohort: Number,
+    Cohort: String,
     Processes: [{ type: Schema.Types.ObjectId, ref: 'Process' }]
 })
 
