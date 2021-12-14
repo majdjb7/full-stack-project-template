@@ -2,10 +2,11 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const api = require('./server/routes/api')
+const loginApi = require('./server/routes/loginApi')
+const studentapi = require('./server/routes/studentApi')
+const adminApi = require('./server/routes/adminApi')
 
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mydb', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/HackathonDB', { useNewUrlParser: true })
 
 const app = express()
 
@@ -16,7 +17,9 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
 
-app.use('/', api)
+app.use('/', loginApi)
+app.use('/', studentapi)
+app.use('/', adminApi)
 
 const port = 8888
 
