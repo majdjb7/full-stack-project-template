@@ -5,6 +5,7 @@
         "phone": "0502746510",
         "Cohort": "cohort-1",
         "Processes": [],
+        "Admin": false,
         "ProcessesCounter": 0
     },
     {
@@ -13,6 +14,7 @@
         "password": "osama1231",
         "phone": "0542272001",
         "Cohort": "cohort-2",
+        "Admin": false,
         "Processes": []
     },
     {
@@ -21,6 +23,7 @@
         "password": "osama1232",
         "phone": "0544801802",
         "Cohort": "cohort-1",
+        "Admin": false,
         "Processes": []
     },
     {
@@ -29,6 +32,7 @@
         "password": "osama1233",
         "phone": "0599555700 ",
         "Cohort": "cohort-3",
+        "Admin": false,
         "Processes": []
     }
 ]
