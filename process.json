@@ -1,32 +1,31 @@
-[
-  {
-    "Id": "1",
-    "JobTitle": "refagex134@leanrights.com",
-    "companyName": "Microsoft",
-    "Status": "Applied",
-	"link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2818691559",
-	"Interviews":[]
-  },
-   {
-    "Id": "2",
-    "JobTitle": "refagex134@leanrights.com",
-    "companyName": "Nvidia",
-    "Status": "no Reply",
-	"link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2807455919",
-	"Interviews":[]
-  },{
-    "Id": "3",
-    "JobTitle": "refagex134@leanrights.com",
-    "companyName": "Linnovate",
-    "Status": "Rejected",
-	"link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2838375969",
-	"Interviews":[]
-  },{
-    "Id": "4",
-    "JobTitle": "refagex134@leanrights.com",
-    "companyName": "Apple",
-    "Status": "Accepted",
-	"link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2821976948",
-	"Interviews":[]
-  }
+[{
+        "Id": "1",
+        "JobTitle": "refagex134@leanrights.com",
+        "companyName": "Microsoft",
+        "Status": "Applied",
+        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2818691559",
+        "Interviews": []
+    },
+    {
+        "Id": "2",
+        "JobTitle": "refagex134@leanrights.com",
+        "companyName": "Nvidia",
+        "Status": "no Reply",
+        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2807455919",
+        "Interviews": []
+    }, {
+        "Id": "3",
+        "JobTitle": "refagex134@leanrights.com",
+        "companyName": "Linnovate",
+        "Status": "Rejected",
+        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2838375969",
+        "Interviews": []
+    }, {
+        "Id": "4",
+        "JobTitle": "refagex134@leanrights.com",
+        "companyName": "Apple",
+        "Status": "Accepted",
+        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2821976948",
+        "Interviews": []
+    }
 ]
