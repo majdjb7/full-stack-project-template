@@ -1,16 +1,16 @@
 [{
         "type": "HR",
-        "Date": "Saturday, May 5, 2018 2:06 PM",
-        "Description": "iudsahduiadsohaos"
+        "date": "Saturday, May 5, 2018 2:06 PM",
+        "description": "iudsahduiadsohaos"
     },
     {
         "type": "Phone interview",
-        "Date": "Sunday, August 19, 2018 9:23 PM",
-        "Description": "iosoadhoiasdhopsa"
+        "date": "Sunday, August 19, 2018 9:23 PM",
+        "description": "iosoadhoiasdhopsa"
     },
     {
         "type": "homework",
-        "Date": "Sunday, December 2, 2018 9:09 AM",
-        "Description": "alskjcblkas aohsjdopas nninaio oisandpo"
+        "date": "Sunday, December 2, 2018 9:09 AM",
+        "description": "alskjcblkas aohsjdopas nninaio oisandpo"
     }
 ]
