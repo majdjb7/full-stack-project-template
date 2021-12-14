@@ -16,9 +16,28 @@
 <body>
 
     <div class="container">
-        <h2>Welcome StudentName</h2>
+        <h2>Welcome <span>osama</span></h2>
         <div>
             <button id="add-new-proccess">Add new Process</button>
+        </div>
+        <div id="proccess-form" class="showProccessForm">
+            <div>
+                <label for="">Job Title</label>
+                <input type="text" class="job-title-input">
+
+                <label for="">Company Name</label>
+                <input type="text" class="company-name-input">
+
+                <label for="">Proccess Link</label>
+                <input type="text" class="procces-link-input">
+
+                <label for="start">Apply date:</label>
+                <input type="date" id="start" name="trip-start" class="date-input">
+
+                <button id="add-proccess-btn">Add Proccess</button>
+
+            </div>
+
         </div>
 
 
@@ -60,11 +79,11 @@
 
     </div>
 
-    <script src="./jquery/dist/jquery.js"></script>
-    <script src="./handlebars/dist/handlebars.js"></script>
-    <script src="DataModel.js"></script>
-    <script src="Renderer.js"></script>
-    <script src="main.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="studentModel.js"></script>
+    <script src="RendererStudent.js"></script>
+    <script src="studentController.js"></script>
 </body>
 
 
