@@ -6,6 +6,7 @@ let student = sessionStorage.getItem('user');
 $(document).ready(async function () {
     await studentModel.getUserProccess()
     renderer.renderData(JSON.parse(studentModel.getData()))
+    console.log(student);
 })
 
 $('#add-new-proccess').on('click', function () {
@@ -23,7 +24,8 @@ $('#add-proccess-btn').on('click', async function () {
         JobTitle: JobTitle,
         companyName: companyName,
         link: link,
-        date: date
+        date: date,
+        StudentId: student._id
     }
     await studentModel.addUserProccess(data)
     studentModel.getUserProccess()
@@ -33,5 +35,9 @@ $('#add-proccess-btn').on('click', async function () {
 })
 
 $('#proccess').on('click', '.header', function () {
-    $(".more-info").toggleClass('showProccessForm')
+    $(this).siblings('.more-info').toggleClass('showProccessForm')
+})
+
+$('#proccess ').on('click', '.add-procces-btn', function () {
+    console.log($(this).text());
 })

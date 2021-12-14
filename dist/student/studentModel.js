@@ -20,6 +20,15 @@ class StudentModel {
         this.data = res
     }
 
+    async addInterview(obj) {
+        let res = await $.ajax({
+            url: `/studentPage/addInterview/osama/:proccessId`,
+            method: "POST",
+            data: newProccess
+        })
+        this.data = res
+    }
+
     // addProccess()
 }
 
