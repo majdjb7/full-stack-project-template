@@ -19,44 +19,7 @@ const Interview = require('../models/Interview')
 //     res.send(student)
 // })
 
-const student = {
-    "name": "osama",
-    "email": "refagex134@leanrights.com",
-    "password": "osama123",
-    "phone": "0502746510",
-    "Cohort": "cohort-1",
-    "Processes": [{
-        "Id": "1",
-        "JobTitle": "refagex134@leanrights.com",
-        "companyName": "Microsoft",
-        "Status": "Applied",
-        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2818691559",
-        "Interviews": []
-    },
-    {
-        "Id": "2",
-        "JobTitle": "refagex134@leanrights.com",
-        "companyName": "Nvidia",
-        "Status": "Applied",
-        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2807455919",
-        "Interviews": []
-    }, {
-        "Id": "3",
-        "JobTitle": "refagex134@leanrights.com",
-        "companyName": "Linnovate",
-        "Status": "Applied",
-        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2838375969",
-        "Interviews": []
-    }, {
-        "Id": "4",
-        "JobTitle": "refagex134@leanrights.com",
-        "companyName": "Apple",
-        "Status": "Applied",
-        "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2821976948",
-        "Interviews": []
-    }
-    ]
-}
+
 
 router.post('/process/:studentName', async function (req, res) {
 
