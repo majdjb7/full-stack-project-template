@@ -31,7 +31,7 @@ router.post('/process/:studentName', async function (req, res) {
 router.get('/allprocesses/:studentName', async function (req, res) {
     const student = await Student.find({ name: req.params.studentName }).populate("Processes")
         .exec(function (err, student) {
-            res.send(student)
+            res.send(student[0])
         });
 })
 

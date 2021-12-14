@@ -7,10 +7,8 @@ class StudentModel {
         return JSON.stringify(this.data)
     }
 
-    getUserProccess() {
-        $.get(`/studentPage/allprocesses/osama`, function (res) {
-            this.data = res;
-        })
+    async getUserProccess() {
+        this.data = await $.get(`/studentPage/allprocesses/osama`)
     }
 
     async addUserProccess(newProccess) {

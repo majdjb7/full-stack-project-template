@@ -7,7 +7,6 @@ $(document).ready(async function () {
     renderer.renderData(JSON.parse(studentModel.getData()))
 })
 
-
 $('#add-new-proccess').on('click', function () {
     $("#proccess-form").toggleClass('showProccessForm')
 })
@@ -26,6 +25,8 @@ $('#add-proccess-btn').on('click', async function () {
         date: date
     }
     await studentModel.addUserProccess(data)
+    studentModel.getUserProccess()
+
     renderer.renderData(JSON.parse(studentModel.getData()))
 
 })

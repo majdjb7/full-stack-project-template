@@ -43,7 +43,7 @@
         <div id="proccess"></div>
         <script id="proccess-template" type="text/x-handlebars">
             {{#each procces}}
-            <div class="procces" data-proccess-id='123'>
+            <div class="procces" data-proccess-id='{{Id}}'>
                 <div class="header">
                     <div class="title">Job title</div>
                     <div class="title">Company Name</div>
@@ -65,7 +65,7 @@
                     </div>
 
                     {{#each Interviews}}
-                    <div class="interview" data-interview-id='123'>
+                    <div class="interview" >
                         <div>{{type}}</div>
                         <div>{{date}}</div>
                         <div>{{description}}</div>
