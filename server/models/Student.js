@@ -6,7 +6,11 @@ const studentSchema = new Schema({
     email: String,
     password: String,
     phone: String,
-    Cohort: String,
+    Cohort: {
+        type: String,
+        enum: ['cohort-1', 'cohort-2', "cohort-3", "cohort-4"],
+        default: 'cohort-4'
+    },
     Processes: [{ type: Schema.Types.ObjectId, ref: 'Process' }]
 })
 
