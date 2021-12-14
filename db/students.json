@@ -1,0 +1,33 @@
+[{
+        "name": "osama",
+        "email": "refagex134@leanrights.com",
+        "password": "osama123",
+        "phone": "0502746510",
+        "Cohort": "cohort-1",
+        "Processes": []
+    },
+    {
+        "name": "osama1",
+        "email": "xodonep859@mykcloud.com",
+        "password": "osama1231",
+        "phone": "0542272001",
+        "Cohort": "cohort-2",
+        "Processes": []
+    },
+    {
+        "name": "osama2",
+        "email": "harin51673@leanrights.com",
+        "password": "osama1232",
+        "phone": "0544801802",
+        "Cohort": "cohort-1",
+        "Processes": []
+    },
+    {
+        "name": "osama3",
+        "email": "jowem21949@mykcloud.com",
+        "password": "osama1233",
+        "phone": "0599555700 ",
+        "Cohort": "cohort-3",
+        "Processes": []
+    }
+]
