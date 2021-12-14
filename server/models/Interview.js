@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const interviewSchema = new Schema({
     type: String,
     Date: Date,
-    Description: String,
+    Description: String
 })
 
 const Interview = mongoose.model("Interview", interviewSchema)
