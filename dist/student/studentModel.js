@@ -1,11 +1,12 @@
-class DataModel {
+class StudentModel {
     constructor() {
         this.data = []
     }
 
     getUserProccess() {
-        $.get('/studentPage', function () {
-
+        $.get('/studentPage/allprocesses/osama', function (res) {
+            console.log(res);
+            this.data = res
         })
     }
 }

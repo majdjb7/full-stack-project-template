@@ -1,2 +1,5 @@
-const dataModel = new DataModel()
+const studentModel = new StudentModel()
 const renderer = new Renderer()
+
+
+studentModel.getUserProccess()

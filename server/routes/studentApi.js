@@ -3,7 +3,7 @@ const router = express.Router()
 const Student = require('../models/Student')
 const Process = require('../models/Process')
 
-router.post('/process', function(req, res) {
+router.post('/process', function (req, res) {
     let process = req.body
     console.log(process)
     let process1 = new Process({
@@ -18,8 +18,8 @@ router.post('/process', function(req, res) {
     res.send(process1)
 })
 
-router.get('/allprocesses/:studentName', async function(req, res) {
-    const student = await Student.find({ name = req.params.studentName })
+router.get('/allprocesses/:studentName', async function (req, res) {
+    const student = await Student.find({ name: req.params.studentName })
     res.send(student)
 })
 
