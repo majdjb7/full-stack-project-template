@@ -83,3 +83,7 @@
 .rejected-accepted-btns .rejected{
     background-color: #e95c5c;
 }
+
+.showProccessForm{
+    display: none;
+}
