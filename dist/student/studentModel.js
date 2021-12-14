@@ -3,8 +3,10 @@ class DataModel {
         this.data = []
     }
 
-
     getUserProccess() {
-        // $.get('/', function())
+        $.get('/studentPage', function () {
+
+        })
     }
 }
+
