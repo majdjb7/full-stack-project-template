@@ -1,7 +1,10 @@
 class StudentModel {
     constructor() {
         this.data = {}
+    }
 
+    getData() {
+        return JSON.stringify(this.data)
     }
 
     getUserProccess() {
@@ -10,13 +13,13 @@ class StudentModel {
         })
     }
 
-    addUserProccess(newProccess) {
-        console.log(newProccess);
-        $.ajax({
-            url: `/studentPage/process/`,
+    async addUserProccess(newProccess) {
+        let res = await $.ajax({
+            url: `/studentPage/process/osama`,
             method: "POST",
             data: newProccess
         })
+        this.data = res
     }
 
     // addProccess()
