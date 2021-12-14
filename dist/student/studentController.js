@@ -1,7 +1,7 @@
 const studentModel = new StudentModel()
 const renderer = new Renderer()
 
-let student = sessionStorage.getItem('user');
+let student = JSON.parse(sessionStorage.getItem('user'))
 
 studentModel.getUserProccess()
 renderer.renderData(JSON.parse(studentModel.getData()))
