@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="studentStyle.css" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div>
+            <button id="add-new-proccess">Add new Process</button>
+        </div>
+
+
+        <div id="proccess">
+            <div class="procces" data-proccess-id='123'>
+                <div class="header">
+                    <div class="title">Job title</div>
+                    <div class="title">Company Name</div>
+                    <div class="title">Status</div>
+                    <div>System Engeneer</div>
+                    <div>Apple</div>
+                    <div>Pending</div>
+                </div>
+
+                <div class="more-info">
+                    <a href="">link to job</a>
+                    <div class="interviews-data-header">
+                        <div class="title">Interview type</div>
+                        <div class="title">Date</div>
+                        <div class="title">Description (Optional)</div>
+
+                    </div>
+                    <div class="interview" data-interview-id='123'>
+                        <div>HR</div>
+                        <div>10/12/2021</div>
+                        <div>This is my description</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="DataModel.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+
+</html>
