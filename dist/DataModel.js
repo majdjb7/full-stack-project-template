@@ -5,6 +5,6 @@ class DataModel {
 
 
     getUserProccess() {
-        $.get('/', data, success)
+        // $.get('/', function())
     }
 }
