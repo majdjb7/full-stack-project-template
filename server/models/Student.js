@@ -11,6 +11,7 @@ const studentSchema = new Schema({
         enum: ['cohort-1', 'cohort-2', "cohort-3", "cohort-4"],
         default: 'cohort-4'
     },
+    ProcessesCounter: Number,
     Processes: [{ type: Schema.Types.ObjectId, ref: 'Process' }]
 })
 

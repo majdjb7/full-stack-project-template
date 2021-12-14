@@ -13,6 +13,7 @@ studentData.forEach(student => {
         password: student.password,
         phone: student.phone,
         Cohort: student.Cohort,
+        ProcessesCounter: 0,
         Processes: student.Processes
     })
     e.save()
