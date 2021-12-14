@@ -17,9 +17,9 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
 
-app.use('/loginPage', loginApi)
-app.use('/studentPage', studentapi)
-app.use('/adminPage', adminApi)
+app.use('/', loginApi)
+app.use('/', studentapi)
+app.use('/', adminApi)
 
 const port = 8888
 
