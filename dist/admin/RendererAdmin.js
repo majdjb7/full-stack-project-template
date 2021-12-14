@@ -1,8 +1,9 @@
-class Renderer {
+class RendererAdmin {
     renderData (data) {
-        let source = $("#data-template").html(); 
+        console.log(data);
+        let source = $("#processes-template").html(); 
         let template = Handlebars.compile(source)
-        let html = template({results: results})
-        $(".results").empty().append(html)
+        let html = template({processData: data})
+        $(".data-div").empty().append(html)
     }
 }

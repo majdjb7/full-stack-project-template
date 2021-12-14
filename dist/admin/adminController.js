@@ -1,25 +1,31 @@
 const adminModel = new AdminModel()
-const renderer = new Renderer()
+const rendererAdmin = new RendererAdmin()
 
+let admin = JSON.parse(sessionStorage.getItem('user'))
 
-adminModel.getUserProccess()
+const getProcesses = async function() {
+    await adminModel.getStudentsProcesses()
+    console.log(adminModel.data)
 
-$('#add-new-proccess').on('click', function () {
-    $("#proccess-form").toggleClass('showProccessForm')
-})
+    rendererAdmin.renderData(adminModel.data)
+    
+}
 
-$('#add-proccess-btn').on('click', function () {
+getProcesses()
 
-    let JobTitle = $('.job-title-input').val(),
-        companyName = $('.company-name-input').val(),
-        link = $('.procces-link-input').val(),
-        date = $('.date-input').val()
-    const data = {
-        JobTitle: JobTitle,
-        companyName: companyName,
-        link: link,
-        date: date
+$('.data-div').on('click' , '.container' , function(){
+    
+    let visible = $(this).find('.more-info').data('visible')
+    
+    if (!visible)
+    {
+        $(this).find('.more-info').show()
+        $(this).find('.more-info').data('visible' , true)
     }
-    adminModel.addUserProccess(data)
-
+        
+    else
+    {
+        $(this).find('.more-info').hide()
+        $(this).find('.more-info').data('visible' , false)
+    }
 })
