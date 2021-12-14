@@ -6,7 +6,7 @@ const studentSchema = new Schema({
     email: String,
     phone: String,
     Cohort: String,
-    Processes: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    Processes: [{ type: Schema.Types.ObjectId, ref: 'Process' }]
 })
 
 const Student = mongoose.model("Student", studentSchema)

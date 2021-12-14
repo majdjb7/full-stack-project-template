@@ -7,7 +7,7 @@ const processSchema = new Schema({
     companyName: String,
     Status: String,
     link: String,
-    Interviews: [{ type: Schema.Types.ObjectId, ref: 'Process' }]
+    Interviews: [{ type: Schema.Types.ObjectId, ref: 'Interview' }]
 })
 
 const Process = mongoose.model("Process", processSchema)
