@@ -4,18 +4,7 @@
         "password": "osama123",
         "phone": "0502746510",
         "Cohort": "cohort-1",
-        "Processes": [{
-            "Id": "1",
-            "JobTitle": "refagex134@leanrights.com",
-            "companyName": "Microsoft",
-            "Status": "Applied",
-            "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2818691559",
-            "Interviews": [{
-                "type": "Phone interview",
-                "Date": "Sunday, August 19, 2018 9:23 PM",
-                "Description": "iosoadhoiasdhopsa"
-            }]
-        }]
+        "Processes": []
     },
     {
         "name": "osama1",
