@@ -1,4 +1,4 @@
-
+window.location.replace("/admin/adminPage.html");
 
 $('.login').on('click', function () {
     let username = $('.username').val()

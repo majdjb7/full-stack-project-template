@@ -6,6 +6,9 @@ const Interview = require('../server/models/Interview')
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/HackathonDB', { useNewUrlParser: true })
 
 const studentData = require("./students.json")
+const processData = require("./process.json")
+const interviewData = require("./interview.json")
+
 studentData.forEach(student => {
     const e = new Student({
         name: student.name,
@@ -16,6 +19,30 @@ studentData.forEach(student => {
         ProcessesCounter: 0,
         Processes: student.Processes
     })
+    
+    processData.forEach(process => {
+        const p= new Process({
+            Id: process.Id,
+            JobTitle: process.JobTitle,
+            companyName: process.companyName,
+            date: process.date,
+            Status: process.Status,
+            link: process.link,
+            Interviews: process.Interviews
+        })
+        interviewData.forEach(interview => {
+            const i = new Interview({
+                type: interview.type,
+                date: interview.date,
+                description: interview.description,
+            })
+            i.save()
+            p.Interviews.push(i)
+        })
+        p.save()
+        e.Processes.push(p)
+    })
+    
     e.save()
 })
 
@@ -30,26 +57,5 @@ adminData.forEach(admin => {
     e.save()
 })
 
-const processData = require("./process.json")
-processData.forEach(process => {
-    const e = new Process({
-        Id: process.Id,
-        JobTitle: process.JobTitle,
-        companyName: process.companyName,
-        date: process.date,
-        Status: process.Status,
-        link: process.link,
-        Interviews: process.Interviews
-    })
-    e.save()
-})
 
-const interviewData = require("./interview.json")
-interviewData.forEach(interview => {
-    const e = new Interview({
-        type: interview.type,
-        date: interview.Date,
-        description: interview.Description,
-    })
-    e.save()
-})
+
