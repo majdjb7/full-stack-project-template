@@ -1,14 +1,15 @@
 const studentModel = new StudentModel()
 const renderer = new Renderer()
 
+let student = sessionStorage.getItem('user');
 
 studentModel.getUserProccess()
 renderer.renderData(JSON.parse(studentModel.getData()))
-$('#add-new-proccess').on('click', function () {
+$('#add-new-proccess').on('click', function() {
     $("#proccess-form").toggleClass('showProccessForm')
 })
 
-$('#add-proccess-btn').on('click', async function () {
+$('#add-proccess-btn').on('click', async function() {
 
     let JobTitle = $('.job-title-input').val(),
         companyName = $('.company-name-input').val(),
