@@ -13,6 +13,7 @@ studentData.forEach(student => {
         password: student.password,
         phone: student.phone,
         Cohort: student.Cohort,
+        ProcessesCounter: 0,
         Processes: student.Processes
     })
     e.save()
@@ -35,6 +36,7 @@ processData.forEach(process => {
         Id: process.Id,
         JobTitle: process.JobTitle,
         companyName: process.companyName,
+        date: process.date,
         Status: process.Status,
         link: process.link,
         Interviews: process.Interviews
