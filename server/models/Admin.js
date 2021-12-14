@@ -5,7 +5,8 @@ const adminSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    phone: String
+    phone: String,
+    Admin: Boolean
 })
 
 const Admin = mongoose.model("Admin", adminSchema)

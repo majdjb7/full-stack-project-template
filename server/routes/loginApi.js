@@ -1,10 +1,34 @@
 const express = require('express')
 const router = express.Router()
-// const Item = require('../models/Item')
+const Student = require('../models/Student')
+const Admin = require('../models/Admin')
 
 
-// router.get('/city/:city', (req, res) => {
-// })
+router.get('/login/:username/:password', (req, res) => {
+    Student.find({ name: req.params.username }, function(err, data) {
+        if (data.length) {
+            if (data[0].password == req.params.password) {
+                res.send(data[0])
+                return
+            } else {
+                res.status(400).send()
+            }
+        } else {
+            Admin.find({ name: req.params.username }, function(err, data) {
+                if (data.length) {
+                    if (data[0].password == req.params.password) {
+                        res.send(data[0])
+                        return
+                    } else {
+                        res.status(400).send()
+                    }
+                } else {
+                    res.send(undefined)
+                }
+            })
+        }
+    })
+})
 
 // router.get('/get', (req, res) => {
 //     Item.find({}, function(err, data) {

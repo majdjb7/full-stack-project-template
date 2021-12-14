@@ -12,6 +12,7 @@ const studentSchema = new Schema({
         default: 'cohort-4'
     },
     ProcessesCounter: Number,
+    Admin: Boolean,
     Processes: [{ type: Schema.Types.ObjectId, ref: 'Process' }]
 })
 
