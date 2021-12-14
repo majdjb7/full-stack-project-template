@@ -46,8 +46,8 @@ const interviewData = require("./interview.json")
 interviewData.forEach(interview => {
     const e = new Interview({
         type: interview.type,
-        Date: interview.Date,
-        Description: interview.Description,
+        date: interview.Date,
+        description: interview.Description,
     })
     e.save()
 })

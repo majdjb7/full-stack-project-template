@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const interviewSchema = new Schema({
     type: String,
-    Date: Date,
-    Description: String
+    date: Date,
+    description: String
 })
 
 const Interview = mongoose.model("Interview", interviewSchema)
