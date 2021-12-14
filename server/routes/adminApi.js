@@ -5,7 +5,7 @@ const Student = require('../models/Student')
 
 router.get('/allStudents', async function(req, res) {
     const students = await Student.find({})
-    res.send({name:students.name, processes:students.processes})
+    res.send({ name: students.name, processes: students.processes })
 })
 
 module.exports = router;
