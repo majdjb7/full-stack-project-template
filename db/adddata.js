@@ -36,6 +36,7 @@ processData.forEach(process => {
         Id: process.Id,
         JobTitle: process.JobTitle,
         companyName: process.companyName,
+        date: process.date,
         Status: process.Status,
         link: process.link,
         Interviews: process.Interviews

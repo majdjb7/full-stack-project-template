@@ -5,7 +5,12 @@ const processSchema = new Schema({
     Id: Number,
     JobTitle: String,
     companyName: String,
-    Status: String,
+    date: Date,
+    Status: {
+        type: String,
+        enum: ['Applied', 'Accepted', "Rejected", "no-Reply", "Active"],
+        default: 'Applied'
+    },
     link: String,
     Interviews: [{ type: Schema.Types.ObjectId, ref: 'Interview' }]
 })
