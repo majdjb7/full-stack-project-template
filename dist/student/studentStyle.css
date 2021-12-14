@@ -9,14 +9,26 @@
 }
 
 #add-new-proccess{
-    background-color: rgb(56, 56, 230);
+    background-color: #008CBA;
     padding: 10px;
+    margin: 10px;
     font-weight: bold;
     color: white;
 }
 
 .procces{
     border: 1px solid black;
+    margin: 20px 0;
+    -webkit-box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.32); 
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.32);
+}
+
+#input-form{
+    width: 50%;
+}
+
+#input-form input,#input-form label{
+    display: block;
 }
 
 .header{
@@ -73,7 +85,6 @@
 .add-procces-btn{
     padding: 10px;
     background-color: rgb(135, 135, 255);
-    /* justify-content: space-between; */
 }
 
 .rejected-accepted-btns .accepted{

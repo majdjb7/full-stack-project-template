@@ -21,7 +21,7 @@
             <button id="add-new-proccess">Add new Process</button>
         </div>
         <div id="proccess-form" class="showProccessForm">
-            <div>
+            <div id="input-form">
                 <label for="">Job Title</label>
                 <input type="text" class="job-title-input">
 
@@ -52,31 +52,25 @@
                     <div>{{companyName}}</div>
                     <div>{{Status}}</div>
 
-                    <!-- {{#each this.Processes}}
-                    <div>{{JobTitle}}</div>
-                    <div>{{companyName}}</div>
-                    <div>{{Status}}</div>
-                    {{/each}} -->
-
                 </div>
 
-                {{/each}}
 
-            </script>
-        <!-- <div class="more-info">
-                    <a href="">link to job</a>
+                <div class="more-info showProccessForm">
+                    <a href="">{{link}}</a>
                     <div class="interviews-data-header">
                         <div class="title">Interview type</div>
                         <div class="title">Date</div>
                         <div class="title">Description (Optional)</div>
 
                     </div>
-                    <div class="interview" data-interview-id='123'>
-                        <div>HR</div>
-                        <div>10/12/2021</div>
-                        <div>This is my description</div>
-                    </div>
 
+                    {{#each Interviews}}
+                    <div class="interview" data-interview-id='123'>
+                        <div>{{type}}</div>
+                        <div>{{date}}</div>
+                        <div>{{description}}</div>
+                    </div>
+                    {{/each}}
                     <div class="rejected-accepted-btns">
                         <button class="add-procces-btn">Add Proccess</button>
                         <button class="right-side accepted">Accepted</button>
@@ -85,7 +79,13 @@
                 </div>
 
             </div>
-        </div> -->
+        </div>
+
+
+                {{/each}}
+
+            </script>
+
 
 
 

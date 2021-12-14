@@ -2,8 +2,12 @@ const studentModel = new StudentModel()
 const renderer = new Renderer()
 
 
-studentModel.getUserProccess()
-renderer.renderData(JSON.parse(studentModel.getData()))
+$(document).ready(async function () {
+    await studentModel.getUserProccess()
+    renderer.renderData(JSON.parse(studentModel.getData()))
+})
+
+
 $('#add-new-proccess').on('click', function () {
     $("#proccess-form").toggleClass('showProccessForm')
 })
@@ -24,4 +28,8 @@ $('#add-proccess-btn').on('click', async function () {
     await studentModel.addUserProccess(data)
     renderer.renderData(JSON.parse(studentModel.getData()))
 
+})
+
+$('#proccess').on('click', '.header', function () {
+    $(".more-info").toggleClass('showProccessForm')
 })
