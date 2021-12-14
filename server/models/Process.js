@@ -11,6 +11,7 @@ const processSchema = new Schema({
         enum: ['Applied', 'Accepted', "Rejected", "no-Reply", "Active"],
         default: 'Applied'
     },
+    StudentId: String,
     link: String,
     Interviews: [{ type: Schema.Types.ObjectId, ref: 'Interview' }]
 })
