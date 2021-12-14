@@ -1,8 +1,11 @@
 class Renderer {
-    renderData (data) {
-        let source = $("#data-template").html(); 
+    constructor() { }
+    renderData(data) {
+        console.log(data);
+        $("#proccess").empty()
+        let source = $("#proccess-template").html();
         let template = Handlebars.compile(source)
-        let html = template({results: results})
-        $(".results").empty().append(html)
+        let html = template({ procces: data.Processes })
+        $("#proccess").append(html)
     }
 }

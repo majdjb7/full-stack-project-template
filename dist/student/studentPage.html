@@ -40,19 +40,30 @@
 
         </div>
 
-
-        <div id="proccess">
+        <div id="proccess"></div>
+        <script id="proccess-template" type="text/x-handlebars">
+            {{#each procces}}
             <div class="procces" data-proccess-id='123'>
                 <div class="header">
                     <div class="title">Job title</div>
                     <div class="title">Company Name</div>
                     <div class="title">Status</div>
-                    <div>System Engeneer</div>
-                    <div>Apple</div>
-                    <div>Pending</div>
+                    <div>{{JobTitle}}</div>
+                    <div>{{companyName}}</div>
+                    <div>{{Status}}</div>
+
+                    <!-- {{#each this.Processes}}
+                    <div>{{JobTitle}}</div>
+                    <div>{{companyName}}</div>
+                    <div>{{Status}}</div>
+                    {{/each}} -->
+
                 </div>
 
-                <div class="more-info">
+                {{/each}}
+
+            </script>
+        <!-- <div class="more-info">
                     <a href="">link to job</a>
                     <div class="interviews-data-header">
                         <div class="title">Interview type</div>
@@ -74,16 +85,17 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
 
 
-    </div>
 
-    <script src="/jquery/dist/jquery.js"></script>
-    <script src="/handlebars/dist/handlebars.js"></script>
-    <script src="studentModel.js"></script>
-    <script src="RendererStudent.js"></script>
-    <script src="studentController.js"></script>
+
+
+        <script src="/jquery/dist/jquery.js"></script>
+        <script src="/handlebars/dist/handlebars.js"></script>
+        <script src="studentModel.js"></script>
+        <script src="RendererStudent.js"></script>
+        <script src="studentController.js"></script>
 </body>
 
 

@@ -4,6 +4,32 @@ const Student = require('../models/Student')
 const Process = require('../models/Process')
 const Interview = require('../models/Interview')
 
+<<<<<<< HEAD
+// router.post('/process/:studentName', async function (req, res) {
+//     let process = req.body
+//     const student = await Student.find({ name: req.params.studentName })
+//     let newProcess = new Process({
+//         Id: student.counter++,
+//         JobTitle: process.JobTitle,
+//         companyName: process.companyName,
+//         Status: process.Status,
+//         link: process.link
+//     })
+//     process1.save()
+//     student = await Student.findOneAndUpdate({ name: req.params.studentName }, { $push: { Processes: process1 } }, { new: true });
+//     res.send(student)
+// })
+
+
+
+router.post('/process/:studentName', async function (req, res) {
+
+    res.send(student)
+})
+
+
+router.get('/allprocesses/:studentName', async function (req, res) {
+=======
 router.post('/process/:studentName', async function(req, res) {
     let process = req.body
     let student = await Student.find({ name: req.params.studentName })
@@ -25,6 +51,7 @@ router.post('/process/:studentName', async function(req, res) {
 })
 
 router.get('/allprocesses/:studentName', async function(req, res) {
+>>>>>>> main
     const student = await Student.find({ name: req.params.studentName })
     res.send(student)
 })
