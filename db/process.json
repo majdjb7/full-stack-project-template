@@ -1,5 +1,4 @@
 [{
-        "Id": "1",
         "JobTitle": "refagex134@leanrights.com",
         "companyName": "Microsoft",
         "Status": "Applied",
@@ -7,21 +6,18 @@
         "Interviews": []
     },
     {
-        "Id": "2",
         "JobTitle": "refagex134@leanrights.com",
         "companyName": "Nvidia",
         "Status": "Applied",
         "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2807455919",
         "Interviews": []
     }, {
-        "Id": "3",
         "JobTitle": "refagex134@leanrights.com",
         "companyName": "Linnovate",
         "Status": "Applied",
         "link": "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2838375969",
         "Interviews": []
     }, {
-        "Id": "4",
         "JobTitle": "refagex134@leanrights.com",
         "companyName": "Apple",
         "Status": "Applied",
