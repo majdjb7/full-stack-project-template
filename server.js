@@ -6,7 +6,7 @@ const loginApi = require('./server/routes/loginApi')
 const studentapi = require('./server/routes/studentApi')
 const adminApi = require('./server/routes/adminApi')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mydb', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/HackathonDB', { useNewUrlParser: true })
 
 const app = express()
 
