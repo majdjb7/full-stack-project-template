@@ -5,26 +5,22 @@ const Process = require('../models/Process')
 
 router.post('/process/:studentName', async function(req, res) {
     let process = req.body
-    // console.log(process)
+        // console.log(process)
+    const student = await Student.find({ name: req.params.studentName })
     let process1 = new Process({
-        Id: process.Id,
+        Id: student.counter++,
         JobTitle: process.JobTitle,
         companyName: process.companyName,
         Status: process.Status,
         link: process.link
     })
-     const student = await Student.find({ name : req.params.studentName })
     process1.save()
-    await Student.findOneAndUpdate(
-        { name : req.params.studentName }, 
-        { $push: { Processes: process1 } }
-    );
-
+    student = await Student.findOneAndUpdate({ name: req.params.studentName }, { $push: { Processes: process1 } }, { new: true });
     res.send(student)
 })
 
 router.get('/allprocesses/:studentName', async function(req, res) {
-    const student = await Student.find({ name : req.params.studentName })
+    const student = await Student.find({ name: req.params.studentName })
     res.send(student)
 })
 
