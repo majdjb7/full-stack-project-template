@@ -18,4 +18,9 @@ router.post('/process', function(req, res) {
     res.send(process1)
 })
 
+router.get('/allprocesses', async function(req, res) {
+    const result = await Process.find({})
+    res.send(result)
+})
+
 module.exports = router;

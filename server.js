@@ -17,10 +17,10 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
 
-app.use('/', loginApi)
-app.use('/', studentapi)
-app.use('/', adminApi)
-
+app.use('/login', loginApi)
+app.use('/studentPage', studentapi)
+app.use('/adminPage', adminApi)
+ 
 const port = 8888
 
 app.listen(process.env.PORT || port, function () {
