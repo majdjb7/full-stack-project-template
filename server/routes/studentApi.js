@@ -29,7 +29,6 @@ router.post('/process/:studentName', async function (req, res) {
             }
         })
         .exec(function (err, students) {
-            console.log(students);
             res.send(students)
 
         })
@@ -64,13 +63,16 @@ router.post('/addInterview/:studentName/:proccessId', async function (req, res) 
         }
     })
 
-    let process = await Process.findOneAndUpdate({ StudentId: student._id, Id: req.params.proccessId }, {
+    console.log(student[0]._id)
+
+    let process = await Process.findOneAndUpdate({ StudentId: student[0]._id, Id: req.params.proccessId }, {
         $push: { Interviews: newInterview },
         $set: { Status: Status.Active.name }
     }, { new: true })
         .populate("Interviews")
 
-    res.send(process)
+
+    res.send(student[0])
 
 })
 
@@ -82,7 +84,7 @@ router.put('/Rejected/:studentName/:proccessId', async function (req, res) {
         }
     })
 
-    let process = await Process.findOneAndUpdate({ StudentId: student._id, Id: req.params.proccessId }, {
+    let process = await Process.findOneAndUpdate({ StudentId: student[0]._id, Id: req.params.proccessId }, {
         $set: { Status: Status.Rejected.name }
     }, { new: true })
         .populate("Interviews")
@@ -99,7 +101,8 @@ router.put('/Accepted/:studentName/:proccessId', async function (req, res) {
         }
     })
 
-    let process = await Process.findOneAndUpdate({ StudentId: student._id, Id: req.params.proccessId }, {
+
+    let process = await Process.findOneAndUpdate({ StudentId: student[0]._id, Id: req.params.proccessId }, {
         $set: { Status: Status.Accepted.name }
     }, { new: true })
         .populate("Interviews")

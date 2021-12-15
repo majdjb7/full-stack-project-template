@@ -17,8 +17,13 @@
 
 <body>
 
+    <script id="user-name-template" type="text/x-handlebars">
+        <h2>Welcome <span>{{name}}</span></h2>
+
+    </script>
+
     <div class="container">
-        <h2>Welcome <span>osama</span></h2>
+        <div id="user-name"></div>
         <div>
             <button id="add-new-proccess">Add new Process</button>
         </div>
@@ -79,8 +84,11 @@
                     {{/each}}
                     <div class="add-interview">
                         <div>
-                            <label for="">Type</label>
-                        <input type="text" class="interview-type-input">
+                            <select id="cars" selected="HR">
+                                <option value="HR">HR</option>
+                                <option value="Phone interview">Phone interview</option>
+                                <option value="homework">homework</option>
+                              </select>
                         </div>
                         <div>
                         <input type="date" class="interview-date-input">

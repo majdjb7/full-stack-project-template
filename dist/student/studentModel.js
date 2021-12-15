@@ -17,8 +17,6 @@ class StudentModel {
             method: "POST",
             data: newProccess
         })
-        // this.data = res
-        // console.log(res);
     }
 
     async addInterview(obj, proccessId) {
@@ -27,9 +25,22 @@ class StudentModel {
             method: "POST",
             data: obj
         })
+    }
 
-        console.log(res)
-        // this.data = res
+    async editStatusAccepted(name, proccessId) {
+        let res = await $.ajax({
+            url: `/studentPage/Accepted/${name}/${proccessId}`,
+            method: "PUT"
+        })
+
+    }
+
+    async editStatusRejected(name, proccessId) {
+        let res = await $.ajax({
+            url: `/studentPage/Rejected/${name}/${proccessId}`,
+            method: "PUT"
+        })
+
     }
 
 }
