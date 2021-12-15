@@ -9,7 +9,6 @@ $('.login').on('click', async function() {
             success: user => {
                 if (user) {
                     user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
-                    sessionStorage.setItem('user', JSON.stringify(user));
                 } else {
                     alert("user not found")
                     location.reload()
