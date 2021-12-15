@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    background-color: rgba(27, 27, 83, 0.445);
+    background-color: #5e73d1;
     padding: 20px;
 }
 
@@ -38,7 +38,7 @@
 
 .interviews-data-header {
     display: grid;
-    background-color: rgb(148, 148, 148);
+    background-color: #c6d2ff7d;
     padding: 10px;
     border-radius: 5px;
     justify-items: center;
@@ -98,4 +98,8 @@ select {
 .filters-header {
     margin: 20px;
     padding: 20px;
+}
+
+.hidden-chart {
+    display: none;
 }
