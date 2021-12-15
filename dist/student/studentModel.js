@@ -17,19 +17,31 @@ class StudentModel {
             method: "POST",
             data: newProccess
         })
-        this.data = res
-        console.log(res);
     }
 
-    async addInterview(obj) {
+    async addInterview(obj, proccessId) {
         let res = await $.ajax({
-            url: `/studentPage/addInterview/osama/:proccessId`,
+            url: `/studentPage/addInterview/osama/${proccessId}`,
             method: "POST",
-            data: newProccess
+            data: obj
         })
-        this.data = res
     }
 
-    // addProccess()
+    async editStatusAccepted(name, proccessId) {
+        let res = await $.ajax({
+            url: `/studentPage/Accepted/${name}/${proccessId}`,
+            method: "PUT"
+        })
+
+    }
+
+    async editStatusRejected(name, proccessId) {
+        let res = await $.ajax({
+            url: `/studentPage/Rejected/${name}/${proccessId}`,
+            method: "PUT"
+        })
+
+    }
+
 }
 

@@ -5,7 +5,7 @@ const Admin = require('../models/Admin')
 
 
 router.get('/login/:username/:password', (req, res) => {
-    Student.find({ name: req.params.username }, function(err, data) {
+    Student.find({ name: req.params.username }, function (err, data) {
         if (data.length) {
             if (data[0].password == req.params.password) {
                 res.send(data[0])
@@ -14,10 +14,14 @@ router.get('/login/:username/:password', (req, res) => {
                 res.status(400).send()
             }
         } else {
-            Admin.find({ name: req.params.username }, function(err, data) {
+            Admin.find({ name: req.params.username }, function (err, data) {
                 if (data.length) {
                     if (data[0].password == req.params.password) {
                         res.send(data[0])
+<<<<<<< HEAD
+=======
+
+>>>>>>> b104fa3a9b75828c0bb7cc1e0c87e7a7cb2a9b10
                         return
                     } else {
                         res.status(400).send()

@@ -2,11 +2,12 @@ const studentModel = new StudentModel()
 const renderer = new Renderer()
 
 let student = JSON.parse(sessionStorage.getItem('user'))
-
+console.log(student.name)
 $(document).ready(async function () {
     await studentModel.getUserProccess()
     renderer.renderData(JSON.parse(studentModel.getData()))
     console.log(student);
+    renderer.renderName(student)
 })
 
 $('#add-new-proccess').on('click', function () {
@@ -31,14 +32,10 @@ $('#add-proccess-btn').on('click', async function () {
         StudentId: student._id
     }
     await studentModel.addUserProccess(data)
-    studentModel.getUserProccess()
+    await studentModel.getUserProccess()
     renderer.renderData(JSON.parse(studentModel.getData()))
 
 })
-
-// type: interview.type,
-// date: interview.date,
-// description: interview.description
 
 $('.more-info').on('click', '.add-procces-btn', function () {
 
@@ -48,23 +45,42 @@ $('#proccess').on('click', '.header', function () {
     $(this).siblings('.more-info').toggleClass('showProccessForm')
 })
 
-$('#proccess').on('click', '.add-Interview-btn', function () {
+$('#proccess').on('click', '.add-Interview-btn', async function () {
     // console.log($(this).text());
 
-
-    let type = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-type-input').val(),
+    let type = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find(":selected").text(),
         date = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-date-input').val(),
-        description = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-description-input').val()
+        description = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-description-input').val(),
+        proccessId = $(this).closest('.procces').data('proccess-id')
 
+    if (!type || !date || !proccessId)
+        return
     const data = {
         type: type,
         date: date,
         description: description,
 
     }
-    // studentModel.addInterview(data)
-    // await studentModel.addUserProccess(data)
-    // studentModel.getUserProccess()
-    // renderer.renderData(JSON.parse(studentModel.getData()))
-    console.log(type + ' ' + date + ' ' + description);
+
+    await studentModel.addInterview(data, proccessId)
+    await studentModel.getUserProccess()
+    renderer.renderData(JSON.parse(studentModel.getData()))
+})
+
+
+$('#proccess').on('click', '.accepted', async function () {
+
+    let proccessId = $(this).closest('.procces').data('proccess-id')
+    await studentModel.editStatusAccepted(student.name, proccessId)
+    await studentModel.getUserProccess()
+    renderer.renderData(JSON.parse(studentModel.getData()))
+})
+
+$('#proccess').on('click', '.rejected', async function () {
+
+    let proccessId = $(this).closest('.procces').data('proccess-id')
+    console.log(proccessId + ' ' + student.name);
+    await studentModel.editStatusRejected(student.name, proccessId)
+    await studentModel.getUserProccess()
+    renderer.renderData(JSON.parse(studentModel.getData()))
 })
