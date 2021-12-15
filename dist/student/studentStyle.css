@@ -1,6 +1,17 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+h2,h2 span {
+    color: #041C32;
+}
+
+button{
+    font-family: 'Lora', serif;
+    font-weight: bold;
 }
 
 .container{
@@ -8,23 +19,44 @@
     margin: 0 auto;
 }
 
-#add-new-proccess{
+#add-new-proccess,
+#add-proccess-btn{
     background-color: #008CBA;
     padding: 10px;
     margin: 10px;
     font-weight: bold;
     color: white;
+    border-radius: 5px;
 }
 
 .procces{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 20px 0;
-    -webkit-box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.32); 
-    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.32);
+    -webkit-box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.17); 
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.17);
 }
 
 #input-form{
     width: 50%;
+    text-align: center;
+    background-color: #04293A;
+    padding: 20px;
+    border-radius: 5px;
+}
+/* #add-proccess-btn{
+    background-color: #008CBA;
+} */
+
+#input-form input{
+    margin: 5px auto;
+}
+
+.header-titles{
+    display: grid;
+    font-weight: bold;
+    justify-items: center;
+    font-size: 22px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 #input-form input,#input-form label{
@@ -35,23 +67,31 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    background-color: rgba(27, 27, 83, 0.445);
+    background-color: #041C32;
     padding: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }
 
 .header .title{
+
     font-weight: bold;
     font-size: 20px;
 }
 
-#more-info a{
+.more-info a{
     display: inline-block;
-    margin: 0 auto;
+    margin: 10px auto;
+}
+
+.more-info {
+    background-color:#04293A ;
 }
 
 .interviews-data-header{
     display: grid;
-    background-color: rgb(148, 148, 148);
+    background-color: #064663;
     padding: 10px;
     border-radius: 5px;
 
@@ -82,19 +122,37 @@
     justify-self: end;
 }
 
-.add-procces-btn{
+.add-Interview-btn,
+.rejected-accepted-btns .accepted,
+.rejected-accepted-btns .rejected{
     padding: 10px;
-    background-color: rgb(135, 135, 255);
+    border: none;
+    background-color: #064663;
+    padding: 10px;
+    margin: 10px;
 }
 
-.rejected-accepted-btns .accepted{
+/* .rejected-accepted-btns .accepted{
     background-color: rgb(74, 189,74);
 }
 
 .rejected-accepted-btns .rejected{
     background-color: #e95c5c;
-}
+} */
 
 .showProccessForm{
     display: none;
+}
+
+.add-interview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin: 10px 0;
+}
+
+input {
+    padding: 7px 10px;
+    background-color: #ECB365;
+    border-radius: 5px;
 }

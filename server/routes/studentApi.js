@@ -21,10 +21,33 @@ router.post('/process/:studentName', async function (req, res) {
         $push: { Processes: newProcess },
         $set: { ProcessesCounter: counter }
     }, { new: true })
-        .populate("Processes")
-        .exec(function (err, student) {
-            res.send(student)
-        });
+        .populate({
+            path: 'Processes',
+            populate: {
+                path: 'Interviews'
+            }
+        })
+        .exec(function (err, students) {
+            console.log(students);
+            res.send(students)
+
+        })
+    // .populate("Processes")
+    // .exec(function (err, student) {
+    //     res.send(student)
+    // });
+
+    //     Student.find({})
+    // .populate({
+    //     path:'Processes',
+    //     populate:{
+    //         path:'Interviews'
+    //     }
+    // })
+    // .exec(function(err, students) {
+    //     res.send(students)
+
+    // })
 
 })
 

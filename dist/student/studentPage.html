@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Student Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="studentStyle.css" />
@@ -42,12 +44,16 @@
 
         <div id="proccess"></div>
         <script id="proccess-template" type="text/x-handlebars">
+
+            <div class="header-titles">
+                <div class="title">Job title</div>
+                <div class="title">Company Name</div>
+                <div class="title">Status</div>
+            </div>
             {{#each procces}}
             <div class="procces" data-proccess-id='{{Id}}'>
                 <div class="header">
-                    <div class="title">Job title</div>
-                    <div class="title">Company Name</div>
-                    <div class="title">Status</div>
+                    
                     <div>{{JobTitle}}</div>
                     <div>{{companyName}}</div>
                     <div>{{Status}}</div>
@@ -56,7 +62,7 @@
 
 
                 <div class="more-info showProccessForm">
-                    <a href="">{{link}}</a>
+                    <a href="{{link}}">Link To Job</a>
                     <div class="interviews-data-header">
                         <div class="title">Interview type</div>
                         <div class="title">Date</div>
@@ -71,8 +77,21 @@
                         <div>{{description}}</div>
                     </div>
                     {{/each}}
+                    <div class="add-interview">
+                        <div>
+                            <label for="">Type</label>
+                        <input type="text" class="interview-type-input">
+                        </div>
+                        <div>
+                        <input type="date" class="interview-date-input">
+                        </div>
+                        <div>
+                        <label for="">Description</label>
+                        <input type="text" class="interview-description-input">
+                        </div>
+                    </div>
                     <div class="rejected-accepted-btns">
-                        <button class="add-procces-btn">Add Interview</button>
+                        <button class="add-Interview-btn">Add Interview</button>
                         <button class="right-side accepted">Accepted</button>
                         <button class="right-side rejected">Rejected</button>
                     </div>

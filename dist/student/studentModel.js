@@ -18,6 +18,7 @@ class StudentModel {
             data: newProccess
         })
         this.data = res
+        console.log(res);
     }
 
     async addInterview(obj) {
