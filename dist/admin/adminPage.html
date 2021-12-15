@@ -7,68 +7,68 @@
     <title>Admin Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="adminStyle.css" />
 
 </head>
 
 <body>
-    <div class="data-div" >
-        
+    <div class="data-div">
+
     </div>
-    
+
 
     <script id="processes-template" type="text/x-handlebars-template">
-         
-        {{#each processData}}
-          <div class="process-div" >
-           
-                <div>{{name}}</div>
-                {{#each Processes}}
-                <!-- <a href={{{this.link}}}>link</a> -->
-                <div class="container">
-                    <div id="proccess">
-                        <div class="procces" data-proccess-id='123'>
-                            <div class="header">
-                                <div class="title">Job title</div>
-                                <div class="title">Company Name</div>
-                                <div class="title">Status</div>
-                                <div>{{this.JobTitle}}</div>
-                                <div>{{this.companyName}}</div>
-                                <div>{{this.Status}}</div>
-                            </div>
-                            
-                            <div class="more-info" style="display: none;" data-visible="false">
-                                <a href="{{this.link}}">link to job</a>
-                                {{#each this.Interviews}}
-                                    <div class="interviews-data-header">
-                                        <div class="title">Interview type</div>
-                                        <div class="title">Date</div>
-                                        <div class="title">Description (Optional)</div>
-                
-                                    </div>
-                                    <div class="interview" data-interview-id='123'>
-                                        <div>{{this.type}}</div>
-                                        <div>{{this.date}}</div>
-                                        <div>{{this.description}}</div>
-                                    </div>
-                                {{/each}}
-            
-                            </div>
-            
-                        </div>
-                    </div>
-            
-            
-                </div>
-                {{/each}}
 
-          </div>
-            
+        {{#each processData}}
+        <div class="process-div">
+
+            <div>{{name}}</div>
+            {{#each Processes}}
+            <!-- <a href={{{this.link}}}>link</a> -->
+            <div class="container">
+                <div id="proccess">
+                    <div class="procces" data-proccess-id='123'>
+                        <div class="title">Job title</div>
+                        <div class="title">Company Name</div>
+                        <div class="title">Status</div>
+                        <div class="header">
+                            <div>{{this.JobTitle}}</div>
+                            <div>{{this.companyName}}</div>
+                            <div>{{this.Status}}</div>
+                        </div>
+
+                        <div class="more-info" style="display: none;" data-visible="false">
+                            <a href="{{this.link}}">link to job</a>
+                            <div class="interviews-data-header">
+                                <div class="title">Interview type</div>
+                                <div class="title">Date</div>
+                                <div class="title">Description (Optional)</div>
+
+                            </div>
+                            {{#each this.Interviews}}
+
+                            <div class="interview" data-interview-id='123'>
+                                <div>{{this.type}}</div>
+                                <div>{{this.date}}</div>
+                                <div>{{this.description}}</div>
+                            </div>
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            {{/each}}
+
+        </div>
+
         {{/each}}
-      
-      </script>
+
+    </script>
     <script src="/jquery/dist/jquery.js"></script>
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="adminModel.js"></script>
