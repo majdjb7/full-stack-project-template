@@ -27,6 +27,8 @@ class StudentModel {
             method: "POST",
             data: obj
         })
+
+        console.log(res)
         // this.data = res
     }
 

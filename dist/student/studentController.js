@@ -48,7 +48,7 @@ $('#proccess').on('click', '.header', function () {
     $(this).siblings('.more-info').toggleClass('showProccessForm')
 })
 
-$('#proccess').on('click', '.add-Interview-btn', function () {
+$('#proccess').on('click', '.add-Interview-btn', async function () {
     // console.log($(this).text());
 
 
@@ -66,7 +66,7 @@ $('#proccess').on('click', '.add-Interview-btn', function () {
 
     }
 
-    studentModel.addInterview(data, proccessId)
+    await studentModel.addInterview(data, proccessId)
     studentModel.getUserProccess()
     renderer.renderData(JSON.parse(studentModel.getData()))
 })
