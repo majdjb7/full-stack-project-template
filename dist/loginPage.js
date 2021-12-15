@@ -22,4 +22,15 @@ $('.login').on('click', async function() {
         })
     }
     login(username, password)
+        // await $.get(`/loginpage/login/${username}/${password}`, function(err, res, user) {
+        //         if (err) {
+
+    //         }
+    //         if (user) {
+    //             user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
+    //         } else {
+    //             alert("User not found")
+    //         }
+    //     })
+    // window.location.replace("/student/studentPage.html");
 })

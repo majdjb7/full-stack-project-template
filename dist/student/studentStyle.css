@@ -158,3 +158,18 @@ input {
     background-color: #ECB365;
     border-radius: 5px;
 }
+
+
+select {
+    color :black;
+    font-weight: bold;
+}
+
+
+  
+  /* Change color of dropdown links on hover */
+  
+  /* Show the dropdown menu on hover */
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
