@@ -1,7 +1,8 @@
-$('.btn-login').on('click', async function() {
-    let username = $('#login-email').val()
-    let password = $('#login-password').val()
-
+$('.login').on('click', function() {
+    let username = $('.username').val()
+    let password = $('.password').val()
+    console.log(username);
+    console.log(password);
     const login = function(username, password) {
         $.ajax({
             method: "GET",

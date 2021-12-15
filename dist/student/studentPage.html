@@ -8,12 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+Display:ital,wght@1,200&family=Poppins:wght@100&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="../allStyles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="studentStyle.css" />
 
 </head>
 
@@ -53,60 +50,57 @@
         <script id="proccess-template" type="text/x-handlebars">
 
             <div class="header-titles">
-                <div class="title">Company Name</div>
                 <div class="title">Job title</div>
+                <div class="title">Company Name</div>
                 <div class="title">Status</div>
             </div>
             {{#each procces}}
             <div class="procces" data-proccess-id='{{Id}}'>
                 <div class="header">
-                    <div>{{companyName}}</div>
+
                     <div>{{JobTitle}}</div>
+                    <div>{{companyName}}</div>
                     <div>{{Status}}</div>
 
                 </div>
 
+
                 <div class="more-info showProccessForm">
-                    <a href="{{link}}" target="_blank">Link To Job</a>
-                    <div class=" interviews-data-header ">
-                        <div class="title ">Interview type</div>
-                        <div class="title ">Date</div>
-                        <div class="title ">Description (Optional)</div>
+                    <a href="{{link}}">Link To Job</a>
+                    <div class="interviews-data-header">
+                        <div class="title">Interview type</div>
+                        <div class="title">Date</div>
+                        <div class="title">Description (Optional)</div>
 
                     </div>
 
                     {{#each Interviews}}
-                    <div class="interview ">
+                    <div class="interview">
                         <div>{{type}}</div>
                         <div>{{date}}</div>
                         <div>{{description}}</div>
                     </div>
                     {{/each}}
-                    <div class="add-interview ">
+                    <div class="add-interview">
                         <div>
-                            <select id="cars " selected="HR ">
-                                <option value="HR ">HR</option>
-                                <option value="Phone interview ">Phone interview</option>
-                                <option value="homework ">homework</option>
+                            <select id="cars" selected="HR">
+                                <option value="HR">HR</option>
+                                <option value="Phone interview">Phone interview</option>
+                                <option value="homework">homework</option>
                               </select>
                         </div>
                         <div>
                             <input type="date" class="interview-date-input">
                         </div>
                         <div>
-<<<<<<< HEAD
-                        <label for="">Description</label>
-                        <input type="text" maxlength="40" class="interview-description-input">
-=======
-                            <label for=" ">Description</label>
-                            <input type="text " class="interview-description-input ">
->>>>>>> f9fd4b10de592d2de9f1919b953389ed63c479cd
+                            <label for="">Description</label>
+                            <input type="text" class="interview-description-input">
                         </div>
                     </div>
-                    <div class="rejected-accepted-btns ">
-                        <button class="add-Interview-btn ">Add Interview</button>
-                        <button class="right-side accepted ">Accepted</button>
-                        <button class="right-side rejected ">Rejected</button>
+                    <div class="rejected-accepted-btns">
+                        <button class="add-Interview-btn">Add Interview</button>
+                        <button class="right-side accepted">Accepted</button>
+                        <button class="right-side rejected">Rejected</button>
                     </div>
                 </div>
 
@@ -118,11 +112,11 @@
 
     </script>
 
-        <script src="/jquery/dist/jquery.js "></script>
-        <script src="/handlebars/dist/handlebars.js "></script>
-        <script src="studentModel.js "></script>
-        <script src="RendererStudent.js "></script>
-        <script src="studentController.js "></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="studentModel.js"></script>
+    <script src="RendererStudent.js"></script>
+    <script src="studentController.js"></script>
 </body>
 
 

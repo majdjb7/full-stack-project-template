@@ -8,11 +8,11 @@ const getAllProcesses = async function() {
     rendererAdmin.renderData(adminModel.data)
 }
 
-const getFilters = async function() {
-    await adminModel.getCohortNames()
-    rendererAdmin.renderCohortDropDown(adminModel.cohortNames)
-    rendererAdmin.showStatusDropDown(adminModel.status)
-}
+// const getFilters = async function() {
+//     await adminModel.getCohortNames()
+//     rendererAdmin.renderCohortDropDown(adminModel.cohortNames)
+//     rendererAdmin.showStatusDropDown(adminModel.status)
+// }
 
 const getStudentsProcessesByCohort = async function(cohort) {
     await adminModel.FilterByCohort(cohort)
@@ -36,8 +36,8 @@ $("#filterBtn").on('click', function() {
 })
 
 $(document).ready(async function() {
-    //     getAllProcesses()
-    getFilters()
+    getAllProcesses()
+        // getFilters()
 
 })
 
