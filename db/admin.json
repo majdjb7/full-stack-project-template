@@ -1,6 +1,7 @@
 [{
     "name": "Admin",
     "email": "Admin@elevation.ac",
+    "password": "Admin123",
     "phone": "0521234567",
     "Admin": true
 }]

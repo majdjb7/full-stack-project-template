@@ -17,11 +17,12 @@ studentData.forEach(student => {
         phone: student.phone,
         Cohort: student.Cohort,
         ProcessesCounter: 0,
-        Processes: student.Processes
+        Processes: student.Processes,
+        Admin: student.Admin
     })
-    
+
     processData.forEach(process => {
-        const p= new Process({
+        const p = new Process({
             Id: process.Id,
             JobTitle: process.JobTitle,
             companyName: process.companyName,
@@ -42,7 +43,7 @@ studentData.forEach(student => {
         p.save()
         e.Processes.push(p)
     })
-    
+
     e.save()
 })
 
@@ -52,10 +53,8 @@ adminData.forEach(admin => {
         name: admin.name,
         email: admin.email,
         password: admin.password,
-        phone: admin.phone
+        phone: admin.phone,
+        Admin: admin.Admin
     })
     e.save()
 })
-
-
-
