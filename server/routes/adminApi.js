@@ -26,7 +26,7 @@ router.get('/allCohortsNames', async function(req, res) {
 })
 
 
-router.get('/allProcesses/:cohort', function(req, res) {
+router.get('/allStudents/:cohort', function(req, res) {
     Student.find({ Cohort: req.params.cohort })
         .populate({
             path: 'Processes',
@@ -44,21 +44,66 @@ router.get('/allStatusValues', async function(req, res) {
     res.send(Status.allValues())
 
 })
+router.get('/allProcesses/:status', function(req, res) {
+    Student.find({})
+        .populate({
+            path: 'Processes',
+            populate: {
+                path: 'Interviews'
+            }
+        })
+        .exec(function(err, students) {
+
+            let toReturn = []
+            students.forEach(s => {
+                if (s.Processes.some(p => p.Status === req.params.status)) {
+                    let statusProcesses = s.Processes.filter(p => p.Status === req.params.status)
+                    s.Processes = statusProcesses
+                    toReturn.push(s)
+                }
+            })
+            res.send(toReturn)
+        })
+})
+
+router.get('/filters/:cohort/:status', function(req, res) {
+    Student.find({ Cohort: req.params.cohort })
+        .populate({
+            path: 'Processes',
+            populate: {
+                path: 'Interviews'
+            }
+        })
+        .exec(function(err, students) {
+
+            let toReturn = []
+            students.forEach(s => {
+                if (s.Processes.some(p => p.Status === req.params.status)) {
+                    let statusProcesses = s.Processes.filter(p => p.Status === req.params.status)
+                    s.Processes = statusProcesses
+                    toReturn.push(s)
+                }
+            })
+            res.send(toReturn)
+        })
+})
+
 router.get('/statusStatistics', async function(req, res) {
-     let allProcesses = await Process.count({})
-     let appliedProcesses = await Process.count({"Status": "Applied"})
-     let activeProcesses = await Process.count({"Status": "Active"})
-     let acceptedProcesses = await Process.count({"Status": "Accepted"})
-     let rejectedProcesses = await Process.count({"Status": "Rejected"})
-     let noReplyProcesses = await Process.count({"Status": "no-Reply"})
+    let allProcesses = await Process.count({})
+    let appliedProcesses = await Process.count({ "Status": "Applied" })
+    let activeProcesses = await Process.count({ "Status": "Active" })
+    let acceptedProcesses = await Process.count({ "Status": "Accepted" })
+    let rejectedProcesses = await Process.count({ "Status": "Rejected" })
+    let noReplyProcesses = await Process.count({ "Status": "no-Reply" })
 
-     let appliedPercentage = ((appliedProcesses*100)/allProcesses).toFixed(2) + "%"
-     let activePercentage = ((activeProcesses*100)/allProcesses).toFixed(2) + "%"
-     let acceptedPercentage = ((acceptedProcesses*100)/allProcesses).toFixed(2) + "%"
-     let rejectedPercentage = ((rejectedProcesses*100)/allProcesses).toFixed(2) + "%"
-     let noReplyPercentage = ((noReplyProcesses*100)/allProcesses).toFixed(2) + "%"
+    let appliedPercentage = ((appliedProcesses * 100) / allProcesses).toFixed(2) + "%"
+    let activePercentage = ((activeProcesses * 100) / allProcesses).toFixed(2) + "%"
+    let acceptedPercentage = ((acceptedProcesses * 100) / allProcesses).toFixed(2) + "%"
+    let rejectedPercentage = ((rejectedProcesses * 100) / allProcesses).toFixed(2) + "%"
+    let noReplyPercentage = ((noReplyProcesses * 100) / allProcesses).toFixed(2) + "%"
 
-     res.send({total: allProcesses,
+    res.send({
+        total: allProcesses,
         applied: appliedProcesses,
         active: activeProcesses,
         accepted: acceptedProcesses,
