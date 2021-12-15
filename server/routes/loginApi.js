@@ -3,7 +3,6 @@ const router = express.Router()
 const Student = require('../models/Student')
 const Admin = require('../models/Admin')
 
-
 router.get('/login/:username/:password', (req, res) => {
     Student.find({ name: req.params.username }, function(err, data) {
         if (data.length) {

@@ -1,18 +1,17 @@
-$('.btn-login').on('click', function () {
-    let username = $('#login-email').val()
-    let password = $('#login-password').val()
-
+$('.login').on('click', function () {
+    let username = $('.username').val()
+    let password = $('.password').val()
+    console.log(username);
+    console.log(password);
     $.ajax({
         method: "GET",
         url: `/loginpage/login/${username}/${password}`,
-        success: function (user) {
+        success: user => {
             if (user) {
                 sessionStorage.setItem('user', JSON.stringify(user));
                 user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
             } else {
                 alert("user not found")
-                sessionStorage.setItem('user', JSON.stringify(''));
-
                 location.reload()
             }
         },
@@ -21,8 +20,8 @@ $('.btn-login').on('click', function () {
             location.reload()
         }
     })
-})
 
+})
 const switchers = [...document.querySelectorAll('.switcher')]
 
 switchers.forEach(item => {
