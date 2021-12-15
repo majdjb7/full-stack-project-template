@@ -5,7 +5,7 @@ const processSchema = new Schema({
     Id: Number,
     JobTitle: String,
     companyName: String,
-    date: Date,
+    date: String,
     Status: {
         type: String,
         enum: ['Applied', 'Accepted', "Rejected", "no-Reply", "Active"],
