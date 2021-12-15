@@ -23,7 +23,7 @@ studentData.forEach(student => {
 
     processData.forEach(process => {
         const p = new Process({
-            Id: process.Id,
+            Id: ++e.ProcessesCounter,
             JobTitle: process.JobTitle,
             companyName: process.companyName,
             date: process.date,
