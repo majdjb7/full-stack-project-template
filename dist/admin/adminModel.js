@@ -1,23 +1,21 @@
 class AdminModel {
     constructor() {
         this.data = {}
-
+        this.cohortNames = {}
     }
 
-    getStudentsProcesses = async function () {
+    getStudentsProcesses = async function() {
         this.data = await $.get(`/adminPage/allStudents`)
         console.log(this.data)
     }
 
-    // addUserProccess(newProccess) {
-    //     console.log(newProccess);
-    //     $.ajax({
-    //         url: `/studentPage/process/`,
-    //         method: "POST",
-    //         data: newProccess
-    //     })
-    // }
+    FilterByCohort = async function(cohort) {
+        console.log(cohort)
+        this.data = await $.get(`/adminPage/allProcesses/${cohort}`)
+    }
 
-    // addProccess()
+    getCohortNames = async function() {
+        this.cohortNames = await $.get('/AdminPage/allCohortsNames')
+    console.log(this.cohortNames)
+    }
 }
-
