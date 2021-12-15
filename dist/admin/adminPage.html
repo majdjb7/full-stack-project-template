@@ -114,10 +114,8 @@
             function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Applied',     {{statusStats.applied}}],
-                ['Active',      {{statusStats.active}}],
-                ['Rejected',  {{statusStats.rejected}}],
-                ['No-Reply', {{statusStats.noReply}}]
+                ['Students with Active Processes',     {{statusStats.Rest}}],
+                ['Students wit Accepted Processes',      {{statusStats.Accepted}}]
             ]);
     
             var options = {
