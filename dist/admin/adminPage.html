@@ -9,21 +9,35 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="adminStyle.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style.css" />
 
 </head>
 
 <body>
-    <div class="filters-header">
+    <div class="Admin-header">
+        <div class="cohort-filter">
 
-    <button>Filter</button>
+        </div>
+        <div class="status-filter">
+
+        </div>
+        <button id="filterBtn">Filter</button>
     </div>
     <div class="data-div">
 
     </div>
 
+    <script id="status-template" type="text/x-handlebars-template">
+        <select id="status">
+            <option>All status</option>
+           {{#each data}}
+               <option>{{this}}</option>
+           {{/each}}
+           </select>
+    </script>
     <script id="cohortNames-template" type="text/x-handlebars-template">
         <select id="cohort">
-         <option>All</option>
+         <option>All Cohorts</option>
         {{#each data}}
             <option>{{this}}</option>
         {{/each}}
@@ -35,7 +49,7 @@
         {{#each processData}}
         <div class="process-div">
 
-            <div>{{name}}</div>
+            <div>{{name}} - {{Cohort}}</div>
             {{#each Processes}}
 
             <div class="container">

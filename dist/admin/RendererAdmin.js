@@ -1,10 +1,17 @@
 class RendererAdmin {
 
-    renderHeader(cohorts) {
+    renderCohortDropDown(cohorts) {
         let source = $("#cohortNames-template").html();
         let template = Handlebars.compile(source)
         let html = template({ data: cohorts })
-        $(".filters-header").empty().append(html)
+        $(".cohort-filter").empty().append(html)
+    }
+
+    showStatusDropDown(status) {
+        let source = $("#status-template").html();
+        let template = Handlebars.compile(source)
+        let html = template({ data: status })
+        $(".status-filter").empty().append(html)
     }
 
     renderData(data) {

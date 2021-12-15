@@ -3,24 +3,40 @@ const rendererAdmin = new RendererAdmin()
 
 let admin = JSON.parse(sessionStorage.getItem('user'))
 
-const getProcesses = async function() {
+const getAllProcesses = async function() {
     await adminModel.getStudentsProcesses()
-    console.log(adminModel.data)
-
     rendererAdmin.renderData(adminModel.data)
-
 }
 
 const getFilters = async function() {
     await adminModel.getCohortNames()
-    rendererAdmin.renderHeader(adminModel.cohortNames)
-}
-const getStudentsProcessesByCohort = async function() {
-    // await adminModel.getStudentsProcessesByCohort()
+    rendererAdmin.renderCohortDropDown(adminModel.cohortNames)
+    rendererAdmin.showStatusDropDown(adminModel.status)
 }
 
+const getStudentsProcessesByCohort = async function(cohort) {
+    await adminModel.FilterByCohort(cohort)
+    rendererAdmin.renderData(adminModel.data)
+}
+
+const getStudentsProcessesByStatus = async function(status) {
+    await adminModel.FilterByStatus(status)
+    rendererAdmin.renderData(adminModel.data)
+}
+
+$("#filterBtn").on('click', function() {
+    let selectedCohort = $('#cohort :selected').text();
+    switch (selectedCohort) {
+        case "All Cohorts":
+            getAllProcesses()
+            break;
+        default:
+            getStudentsProcessesByCohort(selectedCohort)
+    }
+})
+
 $(document).ready(async function() {
-    getProcesses()
+    //     getAllProcesses()
     getFilters()
 
 })

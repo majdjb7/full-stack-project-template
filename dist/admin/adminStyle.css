@@ -1,6 +1,5 @@
 * {
-    padding: 0;
-    margin: 0;
+    margin: 2px;
 }
 
 .container {
@@ -84,4 +83,19 @@
 
 .showProccessForm {
     display: none;
+}
+
+.Admin-header {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+select {
+    width: 150px;
+    height: 40px;
+}
+
+.filters-header {
+    margin: 20px;
+    padding: 20px;
 }

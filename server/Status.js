@@ -10,6 +10,18 @@ class Status {
     constructor(name) {
         this.name = name
     }
+
+
+    static allValues() {
+        let all = []
+        all.push(Status.Applied.name)
+        all.push(Status.Rejected.name)
+        all.push(Status.Active.name)
+        all.push(Status.Accepted.name)
+        all.push(Status.noReply.name)
+
+        return all;
+    }
 }
 
 module.exports = Status

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Process = require('../models/Process')
 const Student = require('../models/Student')
+const Status = require('../Status')
 
 router.get('/allStudents', function(req, res) {
     Student.find({})
@@ -39,4 +40,8 @@ router.get('/allProcesses/:cohort', function(req, res) {
         })
 })
 
+router.get('/allStatusValues', async function(req, res) {
+    res.send(Status.allValues())
+
+})
 module.exports = router;
