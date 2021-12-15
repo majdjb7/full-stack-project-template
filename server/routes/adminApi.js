@@ -44,33 +44,30 @@ router.get('/allStatusValues', async function(req, res) {
     res.send(Status.allValues())
 
 })
-router.get('/statusStatistics', async function(req, res) {
-     let allProcesses = await Process.count({})
-     let appliedProcesses = await Process.count({"Status": "Applied"})
-     let activeProcesses = await Process.count({"Status": "Active"})
-     let acceptedProcesses = await Process.count({"Status": "Accepted"})
-     let rejectedProcesses = await Process.count({"Status": "Rejected"})
-     let noReplyProcesses = await Process.count({"Status": "no-Reply"})
 
-     let appliedPercentage = ((appliedProcesses*100)/allProcesses).toFixed(2) + "%"
-     let activePercentage = ((activeProcesses*100)/allProcesses).toFixed(2) + "%"
-     let acceptedPercentage = ((acceptedProcesses*100)/allProcesses).toFixed(2) + "%"
-     let rejectedPercentage = ((rejectedProcesses*100)/allProcesses).toFixed(2) + "%"
-     let noReplyPercentage = ((noReplyProcesses*100)/allProcesses).toFixed(2) + "%"
+router.get('/statusStatistics/', async function(req, res) {
 
-     res.send({total: allProcesses,
-        applied: appliedProcesses,
-        active: activeProcesses,
-        accepted: acceptedProcesses,
-        rejected: rejectedProcesses,
-        noReply: noReplyProcesses,
-
-        appliedPercentage: appliedPercentage,
-        activePercentage: activePercentage,
-        acceptedPercentage: acceptedPercentage,
-        rejectedPercentage: rejectedPercentage,
-        noReplyPercentage: noReplyPercentage,
-    })
+        let students = await Student.find({})
+            .populate({
+                path: 'Processes',
+                populate: {
+                    path: 'Interviews'
+                }
+            })
+            
+            let statusCount = 0 
+            let rest
+            students.forEach(s => {
+                if (s.Processes.some(p => p.Status === "Accepted")) {
+                    let statusProcesses = s.Processes.filter(p => p.Status === "Accepted")
+                    s.Processes = statusProcesses
+                    statusCount = statusProcesses.length
+                    rest = students.length-statusCount
+                }
+            })
+                res.send({Accepted: statusCount,
+                    Rest: students.length
+                })
 })
 
 
