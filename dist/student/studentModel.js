@@ -17,17 +17,17 @@ class StudentModel {
             method: "POST",
             data: newProccess
         })
-        this.data = res
-        console.log(res);
+        // this.data = res
+        // console.log(res);
     }
 
     async addInterview(obj, proccessId) {
         let res = await $.ajax({
-            url: `/studentPage/addInterview/osama/:proccessId`,
+            url: `/studentPage/addInterview/osama/${proccessId}`,
             method: "POST",
             data: obj
         })
-        this.data = res
+        // this.data = res
     }
 
 }

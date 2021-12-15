@@ -55,18 +55,18 @@ $('#proccess').on('click', '.add-Interview-btn', function () {
     let type = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-type-input').val(),
         date = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-date-input').val(),
         description = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-description-input').val(),
-        proccessId = $(this).closest('.procces').data()
-    console.log(proccessId);
+        proccessId = $(this).closest('.procces').data('proccess-id')
 
+    if (!type || !date || !proccessId)
+        return
     const data = {
         type: type,
         date: date,
         description: description,
 
     }
-    // studentModel.addInterview(data)
-    // await studentModel.addUserProccess(data)
-    // studentModel.getUserProccess()
-    // renderer.renderData(JSON.parse(studentModel.getData()))
-    console.log(type + ' ' + date + ' ' + description);
+
+    studentModel.addInterview(data, proccessId)
+    studentModel.getUserProccess()
+    renderer.renderData(JSON.parse(studentModel.getData()))
 })
