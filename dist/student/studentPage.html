@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="studentStyle.css" />
 
 </head>
@@ -53,7 +52,7 @@
             {{#each procces}}
             <div class="procces" data-proccess-id='{{Id}}'>
                 <div class="header">
-                    
+
                     <div>{{JobTitle}}</div>
                     <div>{{companyName}}</div>
                     <div>{{Status}}</div>
@@ -71,7 +70,7 @@
                     </div>
 
                     {{#each Interviews}}
-                    <div class="interview" >
+                    <div class="interview">
                         <div>{{type}}</div>
                         <div>{{date}}</div>
                         <div>{{description}}</div>
@@ -80,14 +79,14 @@
                     <div class="add-interview">
                         <div>
                             <label for="">Type</label>
-                        <input type="text" class="interview-type-input">
+                            <input type="text" class="interview-type-input">
                         </div>
                         <div>
-                        <input type="date" class="interview-date-input">
+                            <input type="date" class="interview-date-input">
                         </div>
                         <div>
-                        <label for="">Description</label>
-                        <input type="text" class="interview-description-input">
+                            <label for="">Description</label>
+                            <input type="text" class="interview-description-input">
                         </div>
                     </div>
                     <div class="rejected-accepted-btns">
@@ -98,23 +97,23 @@
                 </div>
 
             </div>
-        </div>
+    </div>
 
 
-                {{/each}}
+    {{/each}}
 
-            </script>
-
-
-
+    </script>
 
 
 
-        <script src="/jquery/dist/jquery.js"></script>
-        <script src="/handlebars/dist/handlebars.js"></script>
-        <script src="studentModel.js"></script>
-        <script src="RendererStudent.js"></script>
-        <script src="studentController.js"></script>
+
+
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="studentModel.js"></script>
+    <script src="RendererStudent.js"></script>
+    <script src="studentController.js"></script>
 </body>
 
 

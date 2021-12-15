@@ -9,7 +9,6 @@ router.get('/login/:username/:password', (req, res) => {
         if (data.length) {
             if (data[0].password == req.params.password) {
                 res.send(data[0])
-                sessionStorage.setItem('user', JSON.stringify(user));
                 return
             } else {
                 res.status(400).send()
@@ -19,7 +18,6 @@ router.get('/login/:username/:password', (req, res) => {
                 if (data.length) {
                     if (data[0].password == req.params.password) {
                         res.send(data[0])
-                        sessionStorage.setItem('user', JSON.stringify(user));
                         return
                     } else {
                         res.status(400).send()

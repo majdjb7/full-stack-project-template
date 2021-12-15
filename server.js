@@ -5,17 +5,22 @@ const bodyParser = require('body-parser')
 const loginApi = require('./server/routes/loginApi')
 const studentapi = require('./server/routes/studentApi')
 const adminApi = require('./server/routes/adminApi')
+const session = require('express-session');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/HackathonDB', { useNewUrlParser: true })
 
 const app = express()
 
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
-
 
 app.use('/loginpage', loginApi)
 app.use('/studentPage', studentapi)

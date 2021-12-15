@@ -9,6 +9,7 @@ $('.login').on('click', async function() {
             success: user => {
                 if (user) {
                     user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
+                    sessionStorage.setItem('user', JSON.stringify(user));
                 } else {
                     alert("user not found")
                     location.reload()
@@ -21,15 +22,4 @@ $('.login').on('click', async function() {
         })
     }
     login(username, password)
-        // await $.get(`/loginpage/login/${username}/${password}`, function(err, res, user) {
-        //         if (err) {
-
-    //         }
-    //         if (user) {
-    //             user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
-    //         } else {
-    //             alert("User not found")
-    //         }
-    //     })
-    // window.location.replace("/student/studentPage.html");
 })
