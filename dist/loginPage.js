@@ -1,8 +1,8 @@
-$('.login').on('click', async function () {
-    let username = $('.username').val()
-    let password = $('.password').val()
+$('.btn-login').on('click', async function() {
+    let username = $('#login-email').val()
+    let password = $('#login-password').val()
 
-    const login = function (username, password) {
+    const login = function(username, password) {
         $.ajax({
             method: "GET",
             url: `/loginpage/login/${username}/${password}`,
@@ -10,28 +10,25 @@ $('.login').on('click', async function () {
                 if (user) {
                     sessionStorage.setItem('user', JSON.stringify(user));
                     user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
-                    sessionStorage.setItem('user', JSON.stringify(user));
                 } else {
                     alert("user not found")
                     location.reload()
                 }
             },
-            error: function (xhr, text, err) {
+            error: function(xhr, text, err) {
                 alert("wrong password")
                 location.reload()
             }
         })
     }
     login(username, password)
-    // await $.get(`/loginpage/login/${username}/${password}`, function(err, res, user) {
-    //         if (err) {
+})
 
-    //         }
-    //         if (user) {
-    //             user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
-    //         } else {
-    //             alert("User not found")
-    //         }
-    //     })
-    // window.location.replace("/student/studentPage.html");
+const switchers = [...document.querySelectorAll('.switcher')]
+
+switchers.forEach(item => {
+    item.addEventListener('click', function() {
+        switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+        this.parentElement.classList.add('is-active')
+    })
 })
