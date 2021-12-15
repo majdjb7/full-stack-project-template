@@ -6,7 +6,6 @@ console.log(student.name)
 $(document).ready(async function () {
     await studentModel.getUserProccess()
     renderer.renderData(JSON.parse(studentModel.getData()))
-    console.log(student);
     renderer.renderName(student)
 })
 
@@ -84,3 +83,5 @@ $('#proccess').on('click', '.rejected', async function () {
     await studentModel.getUserProccess()
     renderer.renderData(JSON.parse(studentModel.getData()))
 })
+
+
