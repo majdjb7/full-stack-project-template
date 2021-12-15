@@ -54,7 +54,9 @@ $('#proccess').on('click', '.add-Interview-btn', function () {
 
     let type = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-type-input').val(),
         date = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-date-input').val(),
-        description = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-description-input').val()
+        description = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-description-input').val(),
+        proccessId = $(this).closest('.procces').data()
+    console.log(proccessId);
 
     const data = {
         type: type,
