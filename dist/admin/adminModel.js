@@ -7,17 +7,19 @@ class AdminModel {
 
     getStudentsProcesses = async function() {
         this.data = await $.get(`/adminPage/allStudents`)
-        console.log(this.data)
     }
 
     FilterByCohort = async function(cohort) {
-        console.log(cohort)
         this.data = await $.get(`/adminPage/allProcesses/${cohort}`)
     }
 
     getCohortNames = async function() {
         this.cohortNames = await $.get('/AdminPage/allCohortsNames')
-        console.log(this.cohortNames)
+    }
+
+    getStatusStatistics = async function() {
+        let statusStatistics = await $.get('/AdminPage/statusStatistics')
+        return statusStatistics
     }
 
     getStatusValues = async function() {

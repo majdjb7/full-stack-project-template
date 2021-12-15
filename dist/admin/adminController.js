@@ -54,3 +54,12 @@ $('.data-div').on('click', '.container', function() {
         $(this).find('.more-info').data('visible', false)
     }
 })
+
+
+$('.statistics-div').on('click', '.status-statistics', async function() {
+    let statusStatistics = await adminModel.getStatusStatistics()
+
+    rendererAdmin.renderStatusStatistics(statusStatistics)
+
+    $('#piechart_3d').toggleClass('hidden-chart')
+})

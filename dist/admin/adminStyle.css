@@ -99,3 +99,7 @@ select {
     margin: 20px;
     padding: 20px;
 }
+
+.hidden-chart {
+    display: none;
+}
