@@ -4,7 +4,7 @@ const renderer = new Renderer()
 let student = JSON.parse(sessionStorage.getItem('user'))
 console.log(student.name)
 $(document).ready(async function() {
-    await studentModel.getUserProccess()
+    await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
     console.log(student);
     renderer.renderName(student)
@@ -31,8 +31,8 @@ $('#add-proccess-btn').on('click', async function() {
         date: date,
         StudentId: student._id
     }
-    await studentModel.addUserProccess(data)
-    await studentModel.getUserProccess()
+    await studentModel.addUserProccess(data, student.name)
+    await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
 
 })
@@ -62,8 +62,8 @@ $('#proccess').on('click', '.add-Interview-btn', async function() {
 
     }
 
-    await studentModel.addInterview(data, proccessId)
-    await studentModel.getUserProccess()
+    await studentModel.addInterview(data, proccessId, student.name)
+    await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
 })
 
@@ -72,7 +72,7 @@ $('#proccess').on('click', '.accepted', async function() {
 
     let proccessId = $(this).closest('.procces').data('proccess-id')
     await studentModel.editStatusAccepted(student.name, proccessId)
-    await studentModel.getUserProccess()
+    await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
 })
 
@@ -81,6 +81,6 @@ $('#proccess').on('click', '.rejected', async function() {
     let proccessId = $(this).closest('.procces').data('proccess-id')
     console.log(proccessId + ' ' + student.name);
     await studentModel.editStatusRejected(student.name, proccessId)
-    await studentModel.getUserProccess()
+    await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
 })
