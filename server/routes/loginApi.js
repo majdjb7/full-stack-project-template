@@ -3,6 +3,7 @@ const router = express.Router()
 const Student = require('../models/Student')
 const Admin = require('../models/Admin')
 
+
 router.get('/login/:username/:password', (req, res) => {
     Student.find({ name: req.params.username }, function(err, data) {
         if (data.length) {
@@ -28,4 +29,18 @@ router.get('/login/:username/:password', (req, res) => {
         }
     })
 })
+
+// router.get('/get', (req, res) => {
+//     Item.find({}, function(err, data) {
+//         console.log(data)
+//         res.send(data)
+//     })
+// });
+
+// router.post('/save', (req, res) => {
+//     let data = req.body
+//     let newItem = new Item(data)
+//     newItem.save()
+// })
+
 module.exports = router
