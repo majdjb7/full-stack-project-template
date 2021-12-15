@@ -13,10 +13,22 @@
 </head>
 
 <body>
+    <div class="filters-header">
+
+    <button>Filter</button>
+    </div>
     <div class="data-div">
 
     </div>
 
+    <script id="cohortNames-template" type="text/x-handlebars-template">
+        <select id="cohort">
+         <option>All</option>
+        {{#each data}}
+            <option>{{this}}</option>
+        {{/each}}
+        </select>
+    </script>
 
     <script id="processes-template" type="text/x-handlebars-template">
 
@@ -25,29 +37,28 @@
 
             <div>{{name}}</div>
             {{#each Processes}}
-            <!-- <a href={{{this.link}}}>link</a> -->
+
             <div class="container">
                 <div id="proccess">
                     <div class="procces" data-proccess-id='123'>
-                        <div class="title">Job title</div>
-                        <div class="title">Company Name</div>
-                        <div class="title">Status</div>
                         <div class="header">
-                            <div>{{this.JobTitle}}</div>
+                            <div class="title">Company Name</div>
+                            <div class="title">Job title</div>
+                            <div class="title">Status</div>
                             <div>{{this.companyName}}</div>
+                            <div>{{this.JobTitle}}</div>
                             <div>{{this.Status}}</div>
                         </div>
 
                         <div class="more-info" style="display: none;" data-visible="false">
                             <a href="{{this.link}}">link to job</a>
+
                             <div class="interviews-data-header">
                                 <div class="title">Interview type</div>
                                 <div class="title">Date</div>
                                 <div class="title">Description (Optional)</div>
-
                             </div>
                             {{#each this.Interviews}}
-
                             <div class="interview" data-interview-id='123'>
                                 <div>{{this.type}}</div>
                                 <div>{{this.date}}</div>

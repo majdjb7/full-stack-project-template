@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: 'Lora', serif;
@@ -6,16 +6,17 @@
     font-size: 18px;
 }
 
-h2,h2 span {
+h2,
+h2 span {
     color: #041C32;
 }
 
-button{
+button {
     font-family: 'Lora', serif;
     font-weight: bold;
 }
 
-.container{
+.container {
     width: 80%;
     margin: 0 auto;
 }
@@ -30,35 +31,37 @@ button{
     border-radius: 5px;
 }
 
-.procces{
+.procces {
     /* border: 1px solid black; */
     margin: 20px 0;
-    -webkit-box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.17); 
-    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.17);
+    -webkit-box-shadow: 3px 5px 15px 5px rgba(0, 0, 0, 0.17);
+    box-shadow: 3px 5px 15px 5px rgba(0, 0, 0, 0.17);
 }
 
-#input-form{
+#input-form {
     width: 50%;
     text-align: center;
     background-color: #98bae72e;
     padding: 20px;
     border-radius: 5px;
 }
+
+
 /* #add-proccess-btn{
     background-color: #008CBA;
 } */
 
-#input-form input{
+#input-form input {
     margin: 5px auto;
 }
 
 
-
-#input-form input,#input-form label{
+#input-form input,
+#input-form label {
     display: block;
 }
 
-.header{
+.header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -69,13 +72,12 @@ button{
     font-weight: bold;
 }
 
-.header .title{
-
+.header .title {
     font-weight: bold;
     font-size: 20px;
 }
 
-.more-info a{
+.more-info a {
     display: inline-block;
     margin: 10px auto;
     color: black;
@@ -93,7 +95,7 @@ button{
     padding: 10px;
 }
 
-.interviews-data-header{
+.interviews-data-header {
     display: grid;
     background-color: #c6d2ff7d;
     padding: 10px;
@@ -103,7 +105,7 @@ button{
     grid-template-columns: repeat(3, 1fr);
 }
 
-.interview{
+.interview {
     margin-top: 20px;
     display: grid;
     color: black;
@@ -120,20 +122,19 @@ button{
 .rejected-accepted-btns{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
 }
 
-.rejected-accepted-btns button{
+.rejected-accepted-btns button {
     width: 50%;
 }
 
-.rejected-accepted-btns .right-side{
+.rejected-accepted-btns .right-side {
     justify-self: end;
 }
 
 .add-Interview-btn,
 .rejected-accepted-btns .accepted,
-.rejected-accepted-btns .rejected{
+.rejected-accepted-btns .rejected {
     padding: 10px;
     border: none;
     background-color: #d9e3fd;
@@ -148,7 +149,7 @@ button{
     background-color: #bfd1ff;
 }
 
-.showProccessForm{
+.showProccessForm {
     display: none;
 }
 

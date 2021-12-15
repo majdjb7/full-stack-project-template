@@ -5,7 +5,7 @@ const Admin = require('../models/Admin')
 
 
 router.get('/login/:username/:password', (req, res) => {
-    Student.find({ name: req.params.username }, function (err, data) {
+    Student.find({ name: req.params.username }, function(err, data) {
         if (data.length) {
             if (data[0].password == req.params.password) {
                 res.send(data[0])
@@ -14,11 +14,10 @@ router.get('/login/:username/:password', (req, res) => {
                 res.status(400).send()
             }
         } else {
-            Admin.find({ name: req.params.username }, function (err, data) {
+            Admin.find({ name: req.params.username }, function(err, data) {
                 if (data.length) {
                     if (data[0].password == req.params.password) {
                         res.send(data[0])
-
                         return
                     } else {
                         res.status(400).send()
@@ -30,18 +29,4 @@ router.get('/login/:username/:password', (req, res) => {
         }
     })
 })
-
-// router.get('/get', (req, res) => {
-//     Item.find({}, function(err, data) {
-//         console.log(data)
-//         res.send(data)
-//     })
-// });
-
-// router.post('/save', (req, res) => {
-//     let data = req.body
-//     let newItem = new Item(data)
-//     newItem.save()
-// })
-
 module.exports = router

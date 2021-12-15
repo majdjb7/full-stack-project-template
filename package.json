@@ -1,21 +1,22 @@
 {
-  "name": "managing-processes",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "handlebars": "^4.7.7",
-    "jquery": "^3.6.0",
-    "moment": "^2.23.0",
-    "mongoose": "^5.13.13",
-    "request": "^2.88.0"
-  }
+    "name": "managing-processes",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "express-session": "^1.17.2",
+        "handlebars": "^4.7.7",
+        "jquery": "^3.6.0",
+        "moment": "^2.23.0",
+        "mongoose": "^5.13.13",
+        "request": "^2.88.0"
+    }
 }

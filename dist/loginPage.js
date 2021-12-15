@@ -8,6 +8,7 @@ $('.login').on('click', async function () {
             url: `/loginpage/login/${username}/${password}`,
             success: user => {
                 if (user) {
+                    sessionStorage.setItem('user', JSON.stringify(user));
                     user.Admin ? window.location.replace("/admin/adminPage.html") : window.location.replace("/student/studentPage.html")
                     sessionStorage.setItem('user', JSON.stringify(user));
                 } else {
@@ -43,3 +44,4 @@ switchers.forEach(item => {
         this.parentElement.classList.add('is-active')
     })
 })
+

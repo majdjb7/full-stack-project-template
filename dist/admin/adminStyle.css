@@ -1,25 +1,25 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-.container{
+.container {
     width: 80%;
     margin: 0 auto;
 }
 
-#add-new-proccess{
+#add-new-proccess {
     background-color: rgb(56, 56, 230);
     padding: 10px;
     font-weight: bold;
     color: white;
 }
 
-.procces{
+.procces {
     border: 1px solid black;
 }
 
-.header{
+.header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -27,27 +27,26 @@
     padding: 20px;
 }
 
-.header .title{
+.header .title {
     font-weight: bold;
     font-size: 20px;
 }
 
-#more-info a{
+#more-info a {
     display: inline-block;
     margin: 0 auto;
 }
 
-.interviews-data-header{
+.interviews-data-header {
     display: grid;
     background-color: rgb(148, 148, 148);
     padding: 10px;
     border-radius: 5px;
-
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.interview{
+.interview {
     margin-top: 20px;
     display: grid;
     justify-items: center;
@@ -56,34 +55,33 @@
     border-radius: 5px;
 }
 
-.rejected-accepted-btns{
+.rejected-accepted-btns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
 }
 
-.rejected-accepted-btns button{
+.rejected-accepted-btns button {
     width: 50%;
 }
 
-.rejected-accepted-btns .right-side{
+.rejected-accepted-btns .right-side {
     justify-self: end;
 }
 
-.add-procces-btn{
+.add-procces-btn {
     padding: 10px;
     background-color: rgb(135, 135, 255);
     /* justify-content: space-between; */
 }
 
-.rejected-accepted-btns .accepted{
-    background-color: rgb(74, 189,74);
+.rejected-accepted-btns .accepted {
+    background-color: rgb(74, 189, 74);
 }
 
-.rejected-accepted-btns .rejected{
+.rejected-accepted-btns .rejected {
     background-color: #e95c5c;
 }
 
-.showProccessForm{
+.showProccessForm {
     display: none;
 }

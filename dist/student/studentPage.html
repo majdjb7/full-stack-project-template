@@ -67,62 +67,62 @@
                 </div>
 
                 <div class="more-info showProccessForm">
-                    <a href="{{link}}">Link To Job</a>
-                    <div class="interviews-data-header">
-                        <div class="title">Interview type</div>
-                        <div class="title">Date</div>
-                        <div class="title">Description (Optional)</div>
+                    <a href="{{link}}" target="_blank">Link To Job</a>
+                    <div class=" interviews-data-header ">
+                        <div class="title ">Interview type</div>
+                        <div class="title ">Date</div>
+                        <div class="title ">Description (Optional)</div>
 
                     </div>
 
                     {{#each Interviews}}
-                    <div class="interview" >
+                    <div class="interview ">
                         <div>{{type}}</div>
                         <div>{{date}}</div>
                         <div>{{description}}</div>
                     </div>
                     {{/each}}
-                    <div class="add-interview">
+                    <div class="add-interview ">
                         <div>
-                            <select id="cars" selected="HR">
-                                <option value="HR">HR</option>
-                                <option value="Phone interview">Phone interview</option>
-                                <option value="homework">homework</option>
+                            <select id="cars " selected="HR ">
+                                <option value="HR ">HR</option>
+                                <option value="Phone interview ">Phone interview</option>
+                                <option value="homework ">homework</option>
                               </select>
                         </div>
                         <div>
-                        <input type="date" class="interview-date-input">
+                            <input type="date" class="interview-date-input">
                         </div>
                         <div>
+<<<<<<< HEAD
                         <label for="">Description</label>
                         <input type="text" maxlength="40" class="interview-description-input">
+=======
+                            <label for=" ">Description</label>
+                            <input type="text " class="interview-description-input ">
+>>>>>>> f9fd4b10de592d2de9f1919b953389ed63c479cd
                         </div>
                     </div>
-                    <div class="rejected-accepted-btns">
-                        <button class="add-Interview-btn">Add Interview</button>
-                        <button class="right-side accepted">Accepted</button>
-                        <button class="right-side rejected">Rejected</button>
+                    <div class="rejected-accepted-btns ">
+                        <button class="add-Interview-btn ">Add Interview</button>
+                        <button class="right-side accepted ">Accepted</button>
+                        <button class="right-side rejected ">Rejected</button>
                     </div>
                 </div>
 
             </div>
-        </div>
+    </div>
 
 
-                {{/each}}
+    {{/each}}
 
-            </script>
+    </script>
 
-
-
-
-
-
-        <script src="/jquery/dist/jquery.js"></script>
-        <script src="/handlebars/dist/handlebars.js"></script>
-        <script src="studentModel.js"></script>
-        <script src="RendererStudent.js"></script>
-        <script src="studentController.js"></script>
+        <script src="/jquery/dist/jquery.js "></script>
+        <script src="/handlebars/dist/handlebars.js "></script>
+        <script src="studentModel.js "></script>
+        <script src="RendererStudent.js "></script>
+        <script src="studentController.js "></script>
 </body>
 
 
