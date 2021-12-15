@@ -85,3 +85,7 @@
 .showProccessForm {
     display: none;
 }
+
+.hidden-chart {
+    display: none;
+}

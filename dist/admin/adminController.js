@@ -44,4 +44,6 @@ $('.statistics-div').on('click', '.status-statistics', async function() {
     let statusStatistics = await adminModel.getStatusStatistics()
 
     rendererAdmin.renderStatusStatistics(statusStatistics)
+
+    $('#piechart_3d').toggleClass('hidden-chart')
 })
