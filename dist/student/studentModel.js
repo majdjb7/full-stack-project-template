@@ -7,21 +7,21 @@ class StudentModel {
         return JSON.stringify(this.data)
     }
 
-    async getUserProccess() {
-        this.data = await $.get(`/studentPage/allprocesses/osama`)
+    async getUserProccess(studentName) {
+        this.data = await $.get(`/studentPage/allprocesses/${studentName}`)
     }
 
-    async addUserProccess(newProccess) {
+    async addUserProccess(newProccess, studentName) {
         let res = await $.ajax({
-            url: `/studentPage/process/osama`,
+            url: `/studentPage/process/${studentName}`,
             method: "POST",
             data: newProccess
         })
     }
 
-    async addInterview(obj, proccessId) {
+    async addInterview(obj, proccessId, studentName) {
         let res = await $.ajax({
-            url: `/studentPage/addInterview/osama/${proccessId}`,
+            url: `/studentPage/addInterview/${studentName}/${proccessId}`,
             method: "POST",
             data: obj
         })
@@ -44,4 +44,3 @@ class StudentModel {
     }
 
 }
-
