@@ -56,32 +56,56 @@ router.post('/addInterview/:studentName/:proccessId', async function (req, res) 
         description: interview.description
     })
     newInterview.save()
-    let student = await Student.find({ name: req.params.studentName })
-    console.log(student)
-    let process = await Process.findOneAndUpdate({ StudentId: student[0]._id, Id: req.params.proccessId }, { $push: { Interviews: newInterview }, $set: { Status: Status.Active } }, { new: true })
+
+    let student = await Student.find({ name: req.params.studentName }).populate({
+        path: 'Processes',
+        populate: {
+            path: 'Interviews'
+        }
+    })
+
+    let process = await Process.findOneAndUpdate({ StudentId: student._id, Id: req.params.proccessId }, {
+        $push: { Interviews: newInterview },
+        $set: { Status: Status.Active.name }
+    }, { new: true })
         .populate("Interviews")
-        .exec(async function (err, student) {
-            console.log(student);
-            res.send(student)
-        })
+
+    res.send(process)
+
 })
 
 router.put('/Rejected/:studentName/:proccessId', async function (req, res) {
-    // let student = Student.find({ name: req.params.studentName })
-    //     .populate({
-    //         path: 'Processes',
-    //         populate: {
-    //             path: 'Interviews'
-    //         }
-    //     })
-    //     .exec(function(err, students) {
-    //         console.log(students)
-    //     })
-    // let process = await Process.findOneAndUpdate({ StudentId: student[0]._id, Id: req.params.proccessId }, { $set: { Status: Status.Rejected } }, { new: true })
-    //     .populate("Interviews")
-    //     .exec(async function(err, student) {
-    //         res.send(student)
-    //     })
+    let student = await Student.find({ name: req.params.studentName }).populate({
+        path: 'Processes',
+        populate: {
+            path: 'Interviews'
+        }
+    })
+
+    let process = await Process.findOneAndUpdate({ StudentId: student._id, Id: req.params.proccessId }, {
+        $set: { Status: Status.Rejected.name }
+    }, { new: true })
+        .populate("Interviews")
+
+    res.send(process)
+
+})
+
+router.put('/Accepted/:studentName/:proccessId', async function (req, res) {
+    let student = await Student.find({ name: req.params.studentName }).populate({
+        path: 'Processes',
+        populate: {
+            path: 'Interviews'
+        }
+    })
+
+    let process = await Process.findOneAndUpdate({ StudentId: student._id, Id: req.params.proccessId }, {
+        $set: { Status: Status.Accepted.name }
+    }, { new: true })
+        .populate("Interviews")
+
+    res.send(process)
+
 })
 
 module.exports = router;
