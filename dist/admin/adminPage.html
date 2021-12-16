@@ -66,25 +66,30 @@
         </select>
         </script>
 
-        <script id="processes-template" type="text/x-handlebars-template">
+    <script id="processes-template" type="text/x-handlebars-template">
+        
+        <div class="header-titles">
+            <div class="title">Company Name</div>
+            <div class="title">Job title</div>
+            <div class="title">Status</div>
+        </div>
 
-            {{#each processData}}
-            <div class="process-div">
+        {{#each processData}}
+        <div class="process-div">
+            <div id="student-info">
+                <div id="student-name">{{name}}</div>
+                <div id="student-cohort">{{Cohort}}</div>
+            </div>
+            {{#each Processes}}
 
-                <div>{{name}} - {{Cohort}}</div>
-                {{#each Processes}}
-
-                <div class="container">
-                    <div id="proccess">
-                        <div class="procces" data-proccess-id='123'>
-                            <div class="header">
-                                <div class="title">Company Name</div>
-                                <div class="title">Job title</div>
-                                <div class="title">Status</div>
-                                <div>{{this.companyName}}</div>
-                                <div>{{this.JobTitle}}</div>
-                                <div>{{this.Status}}</div>
-                            </div>
+            <div class="container">
+                <div id="proccess">
+                    <div class="procces" data-proccess-id='123'>
+                        <div class="header">
+                            <div>{{this.companyName}}</div>
+                            <div>{{this.JobTitle}}</div>
+                            <div>{{this.Status}}</div>
+                        </div>
 
                             <div class="more-info" style="display: none;" data-visible="false">
                                 <a href="{{this.link}}">link to job</a>
@@ -118,7 +123,6 @@
         </script>
 
 
-<<<<<<< HEAD
         {{/each}}
     </script>
 
@@ -173,46 +177,6 @@
     <script src="RendererAdmin.js"></script>
     <script src="adminController.js"></script>
 </body>
-=======
-        <script id="statusStats-template" type="text/x-handlebars-template">
-            <script type="text/javascript">
-                google.charts.load("current", {
-                    packages: ["corechart"]
-                });
-                google.charts.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                        ['Task', 'Hours per Day'],
-                        ['Students with Active Processes', {
-                            {
-                                statusStats.Rest
-                            }
-                        }],
-                        ['Students wit Accepted Processes', {
-                            {
-                                statusStats.Accepted
-                            }
-                        }]
-                    ]);
-
-                    var options = {
-                        title: "Statistics of All Student's Processes",
-                        is3D: true,
-                    };
-
-                    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-                    chart.draw(data, options);
-                }
-            </script>
-
-            <script src="/jquery/dist/jquery.js"></script>
-            <script src="/handlebars/dist/handlebars.js"></script>
-            <script src="adminModel.js"></script>
-            <script src="RendererAdmin.js"></script>
-            <script src="adminController.js"></script>
-    </body>
->>>>>>> cabfd9b251496feec2cb0a8aeec755aa7d5c1ad8
 
 
 </html>
