@@ -88,7 +88,13 @@
 
 .Admin-header {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+
+.Admin-header button{
+    padding: 0 20px;
 }
 
 select {
@@ -131,3 +137,38 @@ select {
     margin: 0 auto;
 }
 
+.myContainer{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #5e73d1;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+
+.get-statistics button {
+
+background-color: #c6d2ff7d;
+padding: 10px;
+border: none;
+border-radius: 10px;
+}
+
+.get-statistics button:hover{
+    background-color: #95acffbf;
+}
+
+.head-stat{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #2626a1;
+}
+
+select{
+    padding: 10px;
+}
+
+.header{
+    border: none;
+}

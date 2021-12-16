@@ -5,11 +5,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin Page</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://coursereport-production.imgix.net/uploads/school/logo/269/original/logooooo-01.png?w=200&h=200&dpr=1&q=75" />
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://coursereport-production.imgix.net/uploads/school/logo/269/original/logooooo-01.png?w=200&h=200&dpr=1&q=75" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="../allStyles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="adminStyle.css" />
 
 </head>
 
@@ -21,12 +24,21 @@
     </head>
 
     <body>
-        <div class="get-statistics">
-            <h1>Statistics:</h1>
-            <div class="cohort-filter" style="display: inline;"></div>
-            <button class="cohort-statistics">Get Cohort Statistics</button>
-            <button class="hide-stats">Hide Statistics</button>
+        <div class="myContainer">
+            <h1 class="head-stat">Statistics:</h1>
+
+            <div class="get-statistics">
+                <div class="cohort-filter" style="display: inline;"></div>
+                <button class="cohort-statistics">Get Cohort Statistics</button>
+                <button class="hide-stats">Hide Statistics</button>
+            </div>
+
+
+
+
         </div>
+
+
 
         <div class="statistics-div">
             <div>
@@ -66,8 +78,8 @@
         </select>
         </script>
 
-    <script id="processes-template" type="text/x-handlebars-template">
-        
+        <script id="processes-template" type="text/x-handlebars-template">
+
         <div class="header-titles">
             <div class="title">Company Name</div>
             <div class="title">Job title</div>
@@ -121,59 +133,59 @@
             {{/each}}
         </script>
         </script>
-    </script>
+        </script>
 
-    
-    <script id="statusStats-template" type="text/x-handlebars-template">
+
+        <script id="statusStats-template" type="text/x-handlebars-template">
         <script type="text/javascript">
-            google.charts.load("current", {packages:["corechart"]});
+            google.charts.load("current", { packages: ["corechart"] });
             google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                [`Students with Active Processes ({{statusStats.Rest}})`,     {{statusStats.Rest}}],
-                ['Students Accepted to Jobs ({{statusStats.Accepted}})',      {{statusStats.Accepted}}]
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    [`Students with Active Processes ({{statusStats.Rest}})`, {{ statusStats.Rest }}],
+            ['Students Accepted to Jobs ({{statusStats.Accepted}})', {{ statusStats.Accepted }}]
             ]);
-    
+
             var options = {
                 title: "Statistics of All Student's Processes",
                 is3D: true,
             };
-    
+
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
             chart.draw(data, options);
             }
         </script>
-      </script>
+        </script>
 
-      <script id="cohortStats-template" type="text/x-handlebars-template">
+        <script id="cohortStats-template" type="text/x-handlebars-template">
         <script type="text/javascript">
-            google.charts.load("current", {packages:["corechart"]});
+            google.charts.load("current", { packages: ["corechart"] });
             google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                [`Students with Active Processes ({{statusStats.Rest}})`,     {{statusStats.Rest}}],
-                ['Students Accepted to Jobs ({{statusStats.Accepted}})',      {{statusStats.Accepted}}]
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    [`Students with Active Processes ({{statusStats.Rest}})`, {{ statusStats.Rest }}],
+            ['Students Accepted to Jobs ({{statusStats.Accepted}})', {{ statusStats.Accepted }}]
             ]);
-    
+
             var options = {
                 title: `Statistics of {{statusStats.Cohort}} Processes`,
                 is3D: true,
             };
-    
+
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
             chart.draw(data, options);
             }
         </script>
-      </script>
+        </script>
 
-    <script src="/jquery/dist/jquery.js"></script>
-    <script src="/handlebars/dist/handlebars.js"></script>
-    <script src="adminModel.js"></script>
-    <script src="RendererAdmin.js"></script>
-    <script src="adminController.js"></script>
-</body>
+        <script src="/jquery/dist/jquery.js"></script>
+        <script src="/handlebars/dist/handlebars.js"></script>
+        <script src="adminModel.js"></script>
+        <script src="RendererAdmin.js"></script>
+        <script src="adminController.js"></script>
+    </body>
 
 
 </html>
