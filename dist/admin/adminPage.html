@@ -20,24 +20,24 @@
 
     </head>
 
-<body>
-    <div class="get-statistics">
-        <h1>Statistics:</h1>
-        <div class="cohort-filter" style="display: inline;"></div>
-        <button class="cohort-statistics">Get Cohort Statistics</button>
-        <button class="hide-stats">Hide Statistics</button>
-    </div>
-    
-    <div class="statistics-div">
-        <div>
-            <div class="statusStats-div"></div>
-            <div class="hidden-chart" id="piechart_3d_1" style="width: 600px; height: 300px;"></div>
+    <body>
+        <div class="get-statistics">
+            <h1>Statistics:</h1>
+            <div class="cohort-filter" style="display: inline;"></div>
+            <button class="cohort-statistics">Get Cohort Statistics</button>
+            <button class="hide-stats">Hide Statistics</button>
         </div>
-        <div>
-            <div class="cohortStats-div"></div>
-            <div id="piechart_3d_2" style="width: 600px; height: 300px;  display: none"></div>
+
+        <div class="statistics-div">
+            <div>
+                <div class="statusStats-div"></div>
+                <div class="hidden-chart" id="piechart_3d_1" style="width: 600px; height: 300px;"></div>
+            </div>
+            <div>
+                <div class="cohortStats-div"></div>
+                <div id="piechart_3d_2" style="width: 600px; height: 300px;  display: none"></div>
+            </div>
         </div>
-    </div>
 
 
         <div class="Admin-header">
@@ -118,62 +118,6 @@
         </script>
 
 
-<<<<<<< HEAD
-        {{/each}}
-    </script>
-
-    
-    <script id="statusStats-template" type="text/x-handlebars-template">
-        <script type="text/javascript">
-            google.charts.load("current", {packages:["corechart"]});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                [`Students with Active Processes ({{statusStats.Rest}})`,     {{statusStats.Rest}}],
-                ['Students Accepted to Jobs ({{statusStats.Accepted}})',      {{statusStats.Accepted}}]
-            ]);
-    
-            var options = {
-                title: "Statistics of All Student's Processes",
-                is3D: true,
-            };
-    
-            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
-            chart.draw(data, options);
-            }
-        </script>
-      </script>
-
-      <script id="cohortStats-template" type="text/x-handlebars-template">
-        <script type="text/javascript">
-            google.charts.load("current", {packages:["corechart"]});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                [`Students with Active Processes ({{statusStats.Rest}})`,     {{statusStats.Rest}}],
-                ['Students Accepted to Jobs ({{statusStats.Accepted}})',      {{statusStats.Accepted}}]
-            ]);
-    
-            var options = {
-                title: `Statistics of {{statusStats.Cohort}} Processes`,
-                is3D: true,
-            };
-    
-            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-            chart.draw(data, options);
-            }
-        </script>
-      </script>
-
-    <script src="/jquery/dist/jquery.js"></script>
-    <script src="/handlebars/dist/handlebars.js"></script>
-    <script src="adminModel.js"></script>
-    <script src="RendererAdmin.js"></script>
-    <script src="adminController.js"></script>
-</body>
-=======
         <script id="statusStats-template" type="text/x-handlebars-template">
             <script type="text/javascript">
                 google.charts.load("current", {
@@ -212,7 +156,6 @@
             <script src="RendererAdmin.js"></script>
             <script src="adminController.js"></script>
     </body>
->>>>>>> cabfd9b251496feec2cb0a8aeec755aa7d5c1ad8
 
 
 </html>
