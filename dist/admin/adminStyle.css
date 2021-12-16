@@ -1,7 +1,7 @@
 * {
     margin: 2px;
-    
 }
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -29,7 +29,6 @@
 .header .title {
     font-weight: bold;
     font-size: 20px;
-    
 }
 
 #more-info a {
@@ -87,13 +86,15 @@
 }
 
 .Admin-header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: inline-flex;
     justify-items: center;
+    align-items: center;
+    margin-left: 38%;
+    background-color: #c6d2ff7d;
+    padding: 50px;
 }
 
-
-.Admin-header button{
+.Admin-header button {
     padding: 0 20px;
 }
 
@@ -115,29 +116,33 @@ select {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
 .process-div {
     display: inline;
 }
+
 #student-info {
-    width: 200px;
+    width: 30%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+    text-align: center;
     background-color: #c6d2ff7d;
     padding: 20px;
     font-weight: bold;
     font-size: 40px;
     font-style: italic;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 145px;
+    margin-left: 35%;
     border-radius: 10px;
 }
+
 .header-titles {
     width: 80%;
     margin: 0 auto;
 }
 
-.myContainer{
+.myContainer {
     width: 80%;
     margin: 0 auto;
     text-align: center;
@@ -146,29 +151,59 @@ select {
     padding: 50px;
 }
 
-
 .get-statistics button {
-
-background-color: #c6d2ff7d;
-padding: 10px;
-border: none;
-border-radius: 10px;
+    background-color: #c6d2ff7d;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
 }
 
-.get-statistics button:hover{
+.get-statistics button:hover {
     background-color: #95acffbf;
 }
 
-.head-stat{
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #2626a1;
+#filterBtn {
+    background-color: #708eff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
 }
 
-select{
+#filterBtn:hover {
+    background-color: #95acffbf;
+}
+
+.head-stat {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+select {
     padding: 10px;
 }
 
-.header{
+.header {
     border: none;
+}
+
+.style-line {
+    width: 80%;
+    margin-left: 10%;
+    border-bottom: solid 10px #5e73d1;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.statistics-div {
+    gap: 15px;
+    margin: auto;
+}
+
+.statistics-div>div {
+    border: solid 5px #5e73d1;
+}
+
+.header-titles {
+    border-radius: 7px;
 }

@@ -7,6 +7,13 @@ class RendererAdmin {
         $(".cohort-filter").empty().append(html)
     }
 
+    renderCohortStatsDropDown(cohorts) {
+        let source = $("#statsCohortNames-template").html();
+        let template = Handlebars.compile(source)
+        let html = template({ data: cohorts })
+        $(".cohort-stats-filter").empty().append(html)
+    }
+
     showStatusDropDown(status) {
         let source = $("#status-template").html();
         let template = Handlebars.compile(source)

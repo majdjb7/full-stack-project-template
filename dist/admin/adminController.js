@@ -11,6 +11,7 @@ const getAllProcesses = async function() {
 const getFilters = async function() {
     await adminModel.getCohortNames()
     rendererAdmin.renderCohortDropDown(adminModel.cohortNames)
+    rendererAdmin.renderCohortStatsDropDown(adminModel.cohortNames)
     await adminModel.getStatusValues()
     rendererAdmin.showStatusDropDown(adminModel.status)
 }
@@ -70,13 +71,8 @@ $('.data-div').on('click', '.container', function() {
     }
 })
 
-
-// $('.get-statistics').on('click', '.status-statistics', async function() {
-
-// })
-
 $('.get-statistics').on('click', '.cohort-statistics', async function() {
-    let selectedCohort = $('#cohort :selected').text();
+    let selectedCohort = $('#statsCohort :selected').text();
     if (selectedCohort != "All Cohorts") {
         let cohortStatistics = await adminModel.getStatusStatisticsByCohort(selectedCohort)
         console.log(cohortStatistics)

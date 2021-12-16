@@ -28,7 +28,7 @@
             <h1 class="head-stat">Statistics:</h1>
 
             <div class="get-statistics">
-                <div class="cohort-filter" style="display: inline;"></div>
+                <div class="cohort-stats-filter" style="display: inline;"></div>
                 <button class="cohort-statistics">Get Cohort Statistics</button>
                 <button class="hide-stats">Hide Statistics</button>
             </div>
@@ -51,13 +51,15 @@
             </div>
         </div>
 
-
+        <div class="style-line"></div>
         <div class="Admin-header">
+            <h1>Filter By:     </h1><br>
             <div class="cohort-filter"></div>
             <div class="status-filter"></div>
 
-            <button id="filterBtn">Filter</button>
+            <button id="filterBtn">Search</button>
         </div>
+        <div class="style-line"></div>
 
         <div class="data-div"></div>
 
@@ -78,11 +80,20 @@
         </select>
         </script>
 
+        <script id="statsCohortNames-template" type="text/x-handlebars-template">
+        <select id="statsCohort">
+         <option>All Cohorts</option>
+        {{#each data}}
+            <option>{{this}}</option>
+        {{/each}}
+        </select>
+        </script>
+
         <script id="processes-template" type="text/x-handlebars-template">
 
         <div class="header-titles">
             <div class="title">Company Name</div>
-            <div class="title">Job title</div>
+            <div class="title">Job Title</div>
             <div class="title">Status</div>
         </div>
 
