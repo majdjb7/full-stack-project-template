@@ -108,6 +108,10 @@
         </script>
 
 
+        {{/each}}
+        </script>
+
+
         <script id="statusStats-template" type="text/x-handlebars-template">
             <script type="text/javascript">
                 google.charts.load("current", {
@@ -118,24 +122,14 @@
                 function drawChart() {
                     var data = google.visualization.arrayToDataTable([
                         ['Task', 'Hours per Day'],
-                        ['Applied', {
+                        ['Students with Active Processes', {
                             {
-                                statusStats.applied
+                                statusStats.Rest
                             }
                         }],
-                        ['Active', {
+                        ['Students wit Accepted Processes', {
                             {
-                                statusStats.active
-                            }
-                        }],
-                        ['Rejected', {
-                            {
-                                statusStats.rejected
-                            }
-                        }],
-                        ['No-Reply', {
-                            {
-                                statusStats.noReply
+                                statusStats.Accepted
                             }
                         }]
                     ]);
@@ -149,13 +143,12 @@
                     chart.draw(data, options);
                 }
             </script>
-        </script>
 
-        <script src="/jquery/dist/jquery.js"></script>
-        <script src="/handlebars/dist/handlebars.js"></script>
-        <script src="adminModel.js"></script>
-        <script src="RendererAdmin.js"></script>
-        <script src="adminController.js"></script>
+            <script src="/jquery/dist/jquery.js"></script>
+            <script src="/handlebars/dist/handlebars.js"></script>
+            <script src="adminModel.js"></script>
+            <script src="RendererAdmin.js"></script>
+            <script src="adminController.js"></script>
     </body>
 
 

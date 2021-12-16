@@ -57,7 +57,6 @@ $('#proccess').on('click', '.add-Interview-btn', async function() {
         type: type,
         date: date,
         description: description,
-
     }
 
     await studentModel.addInterview(data, proccessId, student.name)

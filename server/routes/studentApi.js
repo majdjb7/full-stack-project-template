@@ -4,9 +4,12 @@ const Student = require('../models/Student')
 const Process = require('../models/Process')
 const Interview = require('../models/Interview')
 const Status = require('../Status')
+const moment = require('moment')
+
 
 router.post('/process/:studentName', async function (req, res) {
     let process = req.body
+    let myDate = moment(process.date).format('l')
     let student = await Student.find({ name: req.params.studentName })
     let counter = student[0].ProcessesCounter + 1
     let newProcess = new Process({
@@ -14,7 +17,8 @@ router.post('/process/:studentName', async function (req, res) {
         JobTitle: process.JobTitle,
         companyName: process.companyName,
         link: process.link,
-        StudentId: student[0]._id
+        StudentId: student[0]._id,
+        date: myDate
     })
     newProcess.save()
 
@@ -48,10 +52,13 @@ router.get('/allprocesses/:studentName', async function (req, res) {
 
 
 router.post('/addInterview/:studentName/:proccessId', async function (req, res) {
-    const interview = req.body
+    const interview = req.body,
+        myDate = moment(interview.date).format('l')
+    console.log(myDate)
+
     let newInterview = new Interview({
         type: interview.type,
-        date: interview.date,
+        date: myDate,
         description: interview.description
     })
     newInterview.save()

@@ -8,11 +8,12 @@ const getAllProcesses = async function() {
     rendererAdmin.renderData(adminModel.data)
 }
 
-// const getFilters = async function() {
-//     await adminModel.getCohortNames()
-//     rendererAdmin.renderCohortDropDown(adminModel.cohortNames)
-//     rendererAdmin.showStatusDropDown(adminModel.status)
-// }
+const getFilters = async function() {
+    await adminModel.getCohortNames()
+    rendererAdmin.renderCohortDropDown(adminModel.cohortNames)
+    await adminModel.getStatusValues()
+    rendererAdmin.showStatusDropDown(adminModel.status)
+}
 
 const getStudentsProcessesByCohort = async function(cohort) {
     await adminModel.FilterByCohort(cohort)
@@ -24,20 +25,29 @@ const getStudentsProcessesByStatus = async function(status) {
     rendererAdmin.renderData(adminModel.data)
 }
 
+const getStudentsProcessesByStatusAndCohort = async function(status, cohort) {
+    await adminModel.FilterByStatusAndCohort(status, cohort)
+    rendererAdmin.renderData(adminModel.data)
+
+}
+
 $("#filterBtn").on('click', function() {
     let selectedCohort = $('#cohort :selected').text();
-    switch (selectedCohort) {
-        case "All Cohorts":
-            getAllProcesses()
-            break;
-        default:
-            getStudentsProcessesByCohort(selectedCohort)
+    let selectedStatus = $('#status :selected').text();
+    if (selectedCohort === "All Cohorts" && selectedStatus === "All status") {
+        getAllProcesses()
+    } else if (selectedStatus === "All status" && selectedCohort != "All Cohorts") {
+        getStudentsProcessesByCohort(selectedCohort)
+    } else if (selectedStatus != "All status" && selectedCohort === "All Cohorts") {
+        getStudentsProcessesByStatus(selectedStatus)
+    } else {
+        getStudentsProcessesByStatusAndCohort(selectedStatus, selectedCohort)
     }
 })
 
 $(document).ready(async function() {
     getAllProcesses()
-        // getFilters()
+    getFilters()
 
 })
 
