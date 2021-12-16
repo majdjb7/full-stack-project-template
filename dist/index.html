@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WhetherWeather</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://coursereport-production.imgix.net/uploads/school/logo/269/original/logooooo-01.png?w=200&h=200&dpr=1&q=75" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -13,18 +14,8 @@
 </head>
 
 <body>
-
-    <!-- <div id="login-div">
-        Username:
-        <input type="text" class="username" placeholder="Enter Your Username">
-        <br> Password:
-        <input type="password" class="password" placeholder="Password">
-        <br>
-        <button class="login">Login</button>
-    </div> -->
-
     <section class="forms-section">
-        <h1 class="section-title">Animated Forms</h1>
+        <h1 class="section-title"><img src="https://elevation.ac/wp-content/uploads/2020/08/Elevation_logo_website_mobile.png"></h1>
         <div class="forms">
             <div class="form-wrapper is-active">
                 <button type="button" class="switcher switcher-login">
@@ -53,18 +44,26 @@
                 </button>
                 <form class="form form-signup">
                     <fieldset>
-                        <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                        <legend>Please, enter your Data for sign up.</legend>
                         <div class="input-block">
-                            <label for="signup-email">E-mail</label>
-                            <input id="signup-email" type="email" required>
+                            <label for="signup-email">Name</label>
+                            <input id="signup-name" type="text" required>
                         </div>
                         <div class="input-block">
                             <label for="signup-password">Password</label>
                             <input id="signup-password" type="password" required>
                         </div>
                         <div class="input-block">
-                            <label for="signup-password-confirm">Confirm password</label>
-                            <input id="signup-password-confirm" type="password" required>
+                            <label for="signup-email">Email</label>
+                            <input id="signup-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-phone">phone</label>
+                            <input id="signup-phone" type="tel" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-cohort">cohort</label>
+                            <input id="signup-cohort" type="txt" required>
                         </div>
                     </fieldset>
                     <button type="submit" class="btn-signup">Continue</button>
@@ -74,11 +73,9 @@
     </section>
 
 
-    <script src="./jquery/dist/jquery.js"></script>
-    <script src="./handlebars/dist/handlebars.js"></script>
-    <!-- <script src="DataModel.js"></script>
-    <script src="Renderer.js"></script> -->
-    <script src="loginPage.js"></script>
+    <script src="./jquery/dist/jquery.js "></script>
+    <script src="./handlebars/dist/handlebars.js "></script>
+    <script src="loginPage.js "></script>
 </body>
 
 

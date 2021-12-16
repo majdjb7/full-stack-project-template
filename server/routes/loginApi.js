@@ -30,17 +30,32 @@ router.get('/login/:username/:password', (req, res) => {
     })
 })
 
-// router.get('/get', (req, res) => {
-//     Item.find({}, function(err, data) {
-//         console.log(data)
-//         res.send(data)
-//     })
-// });
-
-// router.post('/save', (req, res) => {
-//     let data = req.body
-//     let newItem = new Item(data)
-//     newItem.save()
-// })
+router.post('/register', (req, res) => {
+    let user = req.body
+    Admin.find({ name: req.params.username }, function(err, data) {
+        if (!data.length) {
+            Student.find({ name: user.name }, function(err, data) {
+                if (!data.length) {
+                    let newStudent = new Student({
+                        name: user.name,
+                        email: user.email,
+                        password: user.password,
+                        phone: user.phone,
+                        Cohort: user.cohort,
+                        ProcessesCounter: 0,
+                        Admin: false,
+                        Processes: []
+                    })
+                    newStudent.save()
+                    res.send(true)
+                } else {
+                    res.send(undefined)
+                }
+            })
+        } else {
+            res.send(undefined)
+        }
+    })
+})
 
 module.exports = router

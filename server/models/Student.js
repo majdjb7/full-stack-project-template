@@ -8,7 +8,7 @@ const studentSchema = new Schema({
     phone: String,
     Cohort: {
         type: String,
-        enum: ['cohort-1', 'cohort-2', "cohort-3", "cohort-4"],
+        enum: ['cohort-1', 'cohort-2', 'cohort-3', 'cohort-4'],
         default: 'cohort-4'
     },
     ProcessesCounter: Number,

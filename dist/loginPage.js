@@ -6,12 +6,28 @@ $('.btn-login').on('click', async function(e) {
         url: `/loginpage/login/${username}/${password}`,
         method: "GET",
     })
-    console.log(user);
     if (user) {
         sessionStorage.setItem('user', JSON.stringify(user));
         user.Admin ? window.location.replace("admin/adminPage.html") : window.location.replace("student/studentPage.html")
     } else {
         alert("user not found")
+        location.reload()
+    }
+})
+
+$('.btn-signup').on('click', async function() {
+    let username = $('#signup-name').val(),
+        password = $('#signup-password').val(),
+        email = $('#signup-email').val(),
+        phone = $('#signup-phone').val(),
+        Cohort = $('#signup-cohor').val()
+    let user = await $.ajax({
+        url: `/loginpage/register`,
+        data: { name: username, password: password, email: email, phone: phone, cohort: Cohort },
+        method: "POST",
+    })
+    if (!user) {
+        alert("Name already exist please try another name")
         location.reload()
     }
 })
