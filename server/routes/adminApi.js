@@ -114,5 +114,32 @@ router.get('/statusStatistics/', async function(req, res) {
     })
 })
 
+router.get('/statusStatistics/:cohort', async function(req, res) {
+
+    let students = await Student.find({ Cohort: req.params.cohort })
+        .populate({
+            path: 'Processes',
+            populate: {
+                path: 'Interviews'
+            }
+        })
+
+    let statusCount = 0
+    let rest
+    students.forEach(s => {
+        if (s.Processes.some(p => p.Status === "Accepted")) {
+            let statusProcesses = s.Processes.filter(p => p.Status === "Accepted")
+            s.Processes = statusProcesses
+            statusCount = statusProcesses.length
+            rest = students.length - statusCount
+        }
+    })
+    res.send({
+        Accepted: statusCount,
+        Rest: students.length,
+        Cohort: req.params.cohort
+    })
+})
+
 
 module.exports = router;

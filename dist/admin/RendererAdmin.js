@@ -22,10 +22,17 @@ class RendererAdmin {
     }
 
     renderStatusStatistics(status) {
-        console.log(status)
         let source = $("#statusStats-template").html();
         let template = Handlebars.compile(source)
         let html = template({ statusStats: status })
         $(".statusStats-div").empty().append(html)
+    }
+
+    renderCohortStatistics(status) {
+        console.log(status)
+        let source = $("#cohortStats-template").html();
+        let template = Handlebars.compile(source)
+        let html = template({ statusStats: status })
+        $(".cohortStats-div").empty().append(html)
     }
 }

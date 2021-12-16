@@ -22,6 +22,11 @@ class AdminModel {
         return statusStatistics
     }
 
+    getStatusStatisticsByCohort = async function(cohort) {
+        let statusStatisticsByCohort = await $.get(`/AdminPage/statusStatistics/${cohort}`)
+        return statusStatisticsByCohort
+    }
+
     getStatusValues = async function() {
         this.status = await $.get(`/AdminPage/allStatusValues`)
     }

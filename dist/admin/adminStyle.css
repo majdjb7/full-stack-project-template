@@ -103,3 +103,8 @@ select {
 .hidden-chart {
     display: none;
 }
+
+.statistics-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

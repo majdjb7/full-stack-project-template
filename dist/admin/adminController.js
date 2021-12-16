@@ -48,6 +48,11 @@ $("#filterBtn").on('click', function() {
 $(document).ready(async function() {
     getAllProcesses()
     getFilters()
+    let statusStatistics = await adminModel.getStatusStatistics()
+
+    rendererAdmin.renderStatusStatistics(statusStatistics)
+
+    $('#piechart_3d_1').toggleClass('hidden-chart')
 
 })
 
@@ -66,10 +71,25 @@ $('.data-div').on('click', '.container', function() {
 })
 
 
-$('.statistics-div').on('click', '.status-statistics', async function() {
-    let statusStatistics = await adminModel.getStatusStatistics()
+// $('.get-statistics').on('click', '.status-statistics', async function() {
 
-    rendererAdmin.renderStatusStatistics(statusStatistics)
+// })
 
-    $('#piechart_3d').toggleClass('hidden-chart')
+$('.get-statistics').on('click', '.cohort-statistics', async function() {
+    let selectedCohort = $('#cohort :selected').text();
+    if(selectedCohort != "All Cohorts") {
+        let cohortStatistics = await adminModel.getStatusStatisticsByCohort(selectedCohort)
+        console.log(cohortStatistics)
+
+        rendererAdmin.renderCohortStatistics(cohortStatistics)
+        $('#piechart_3d_1').show()
+
+        $('#piechart_3d_2').show()
+    }
+})
+
+$('.get-statistics').on('click', '.hide-stats', function() {
+    $('#piechart_3d_1').hide()
+
+    $('#piechart_3d_2').hide()
 })
