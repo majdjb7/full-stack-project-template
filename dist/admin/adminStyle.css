@@ -200,10 +200,6 @@ select {
     margin: auto;
 }
 
-.statistics-div>div {
-    border: solid 5px #5e73d1;
-}
-
 .header-titles {
     border-radius: 7px;
 }
