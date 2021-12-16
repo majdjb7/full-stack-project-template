@@ -1,7 +1,7 @@
 * {
     margin: 2px;
+    
 }
-
 .container {
     width: 80%;
     margin: 0 auto;
@@ -29,6 +29,7 @@
 .header .title {
     font-weight: bold;
     font-size: 20px;
+    
 }
 
 #more-info a {
@@ -103,3 +104,25 @@ select {
 .hidden-chart {
     display: none;
 }
+.process-div {
+    display: inline;
+}
+#student-info {
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    background-color: #c6d2ff7d;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 40px;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 145px;
+    border-radius: 10px;
+}
+.header-titles {
+    width: 80%;
+    margin: 0 auto;
+}
+

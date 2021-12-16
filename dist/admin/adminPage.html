@@ -57,20 +57,25 @@
     </script>
 
     <script id="processes-template" type="text/x-handlebars-template">
+        
+        <div class="header-titles">
+            <div class="title">Company Name</div>
+            <div class="title">Job title</div>
+            <div class="title">Status</div>
+        </div>
 
         {{#each processData}}
         <div class="process-div">
-
-            <div>{{name}} - {{Cohort}}</div>
+            <div id="student-info">
+                <div id="student-name">{{name}}</div>
+                <div id="student-cohort">{{Cohort}}</div>
+            </div>
             {{#each Processes}}
 
             <div class="container">
                 <div id="proccess">
                     <div class="procces" data-proccess-id='123'>
                         <div class="header">
-                            <div class="title">Company Name</div>
-                            <div class="title">Job title</div>
-                            <div class="title">Status</div>
                             <div>{{this.companyName}}</div>
                             <div>{{this.JobTitle}}</div>
                             <div>{{this.Status}}</div>
