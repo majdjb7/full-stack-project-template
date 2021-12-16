@@ -33,10 +33,11 @@ $('#add-proccess-btn').on('click', async function() {
     await studentModel.addUserProccess(data, student.name)
     await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
-
-})
-
-$('.more-info').on('click', '.add-procces-btn', function() {
+    $("#proccess-form").toggleClass('showProccessForm')
+    $('.job-title-input').val("")
+    $('.company-name-input').val("")
+    $('.procces-link-input').val("")
+    $('.date-input').val("")
 
 })
 
@@ -45,8 +46,6 @@ $('#proccess').on('click', '.header', function() {
 })
 
 $('#proccess').on('click', '.add-Interview-btn', async function() {
-    // console.log($(this).text());
-
     let type = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find(":selected").text(),
         date = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-date-input').val(),
         description = $(this).closest('.rejected-accepted-btns').siblings('.add-interview').find('.interview-description-input').val(),
@@ -58,7 +57,6 @@ $('#proccess').on('click', '.add-Interview-btn', async function() {
         type: type,
         date: date,
         description: description,
-
     }
 
     await studentModel.addInterview(data, proccessId, student.name)
@@ -82,6 +80,5 @@ $('#proccess').on('click', '.rejected', async function() {
     await studentModel.editStatusRejected(student.name, proccessId)
     await studentModel.getUserProccess(student.name)
     renderer.renderData(JSON.parse(studentModel.getData()))
+
 })
-
-

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const interviewSchema = new Schema({
     type: String,
-    date: Date,
+    date: String,
     description: String
 })
 
