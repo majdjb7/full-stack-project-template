@@ -77,7 +77,7 @@ $('.data-div').on('click', '.container', function() {
 
 $('.get-statistics').on('click', '.cohort-statistics', async function() {
     let selectedCohort = $('#cohort :selected').text();
-    if(selectedCohort != "All Cohorts") {
+    if (selectedCohort != "All Cohorts") {
         let cohortStatistics = await adminModel.getStatusStatisticsByCohort(selectedCohort)
         console.log(cohortStatistics)
 
